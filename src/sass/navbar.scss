@@ -1,0 +1,83 @@
+.MuiPaper-root {
+  background-color: rgba(0, 0, 0, 0.9) !important;
+  // transition: background ease 0.5s !important;
+
+  display: none !important;
+}
+
+.navBar {
+  -webkit-transition: transform 0.5s ease;
+  -moz-transition: transform 0.5s ease;
+  -o-transition: transform 0.5s ease;
+  transition: transform 0.5s ease;
+
+  &.scrollUp {
+    transform: translateY(0px);
+    -webkit-transition: transform 0.5s ease;
+    -moz-transition: transform 0.5s ease;
+    -o-transition: transform 0.5s ease;
+    transition: transform 0.5s ease;
+  }
+
+  &.scrollDown {
+    transform: translateY(-80px);
+    -webkit-transition: transform 0.5s ease;
+    -moz-transition: transform 0.5s ease;
+    -o-transition: transform 0.5s ease;
+    transition: transform 0.5s ease;
+  }
+}
+
+// ul with nav links
+.navList {
+  display: block;
+  margin: 0;
+
+  .navItem {
+    display: inline-block;
+
+    cursor: pointer;
+
+    .navIndicator {
+      box-shadow: 0px -30px 0px 0px #00eeff;
+      transition: all 435ms cubic-bezier(0.4, 0, 0.2, 1);
+      position: absolute;
+      width: 100%;
+      right: 0;
+      left: 0;
+      top: 0;
+    }
+
+    &.navSelected {
+      text-shadow: 0px 0px 5px #fff, 0px 0px 2px #fff;
+
+      .navIndicator {
+        box-shadow: 0px -30px 55px 15px #00eeff;
+        transition: all 435ms ease;
+        position: absolute;
+        width: 100%;
+        right: 0;
+        left: 0;
+        top: 0;
+      }
+    }
+
+    .navLink {
+      -webkit-transition: all 0.25s ease-in-out;
+      -moz-transition: all 0.25s ease-in-out;
+      -ms-transition: all 0.25s ease-in-out;
+      -o-transition: all 0.25s ease-in-out;
+      transition: all 0.25s ease-in-out;
+      padding: 0 40px 0 40px;
+      display: inline-block;
+      text-align: center;
+      position: relative;
+      line-height: 48px;
+
+      &:hover {
+        text-shadow: 0px 0px 5px #fff, 0px 0px 2px #fff;
+        transition: all 0.25s ease-in-out;
+      }
+    }
+  }
+}

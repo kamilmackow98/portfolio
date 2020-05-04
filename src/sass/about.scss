@@ -1,0 +1,17 @@
+.aboutContainer {
+  min-height: $minWindowHeigh;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  // border: 2px solid red;
+  justify-items: center;
+  align-items: center;
+  height: 100vh;
+  display: grid;
+
+  .aboutGridItem {
+    // border: 2px solid green;
+    display: grid;
+    height: 100%;
+    width: 100%;
+  }
+}

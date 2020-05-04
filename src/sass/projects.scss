@@ -1,0 +1,418 @@
+//on mobile
+@media screen and (max-width: 1023px) {
+  // container just after section for skills
+  #projectsContainer {
+    grid-template-columns: 1fr;
+    display: grid;
+    row-gap: 10px;
+    height: auto;
+
+    // each item of grid
+    .projects__item {
+      justify-items: center;
+      align-items: center;
+      display: grid;
+      z-index: 0;
+    }
+
+    // content of each grid item
+    .projectsContent {
+      background-color: rgb(25, 25, 25);
+      margin: 45px 20px 45px 20px;
+      position: relative;
+      min-height: 450px;
+      min-width: 300px;
+      max-width: 450px;
+      height: auto;
+      width: 75vw;
+
+      // div to wrap content
+      & > div {
+        padding: 20px;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        top: 0;
+      }
+    }
+  }
+}
+
+// on desktop
+@media screen and (min-width: 1024px) {
+  /* project container but also <section> */
+  #projectsContainer {
+    background-color: rgb(10, 10, 10);
+    position: relative;
+    height: auto;
+    width: 100%;
+
+    -webkit-clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
+    clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
+
+    pointer-events: none;
+
+    // buttons for flickity
+    .flickity-button {
+      color: rgba(255, 255, 255, 0.25);
+      transition: all 250ms ease;
+      pointer-events: auto;
+      background: none;
+      height: 50px;
+      width: 50px;
+
+      &:hover:not(:disabled) {
+        color: rgba(255, 255, 255, 0.8);
+      }
+    }
+
+    // left button
+    .flickity-button.previous {
+      left: 15vw;
+    }
+
+    // right button
+    .flickity-button.next {
+      right: 15vw;
+    }
+
+    // flickity dots with current index etc.
+    .flickity-page-dots {
+      pointer-events: auto;
+      bottom: 10%;
+
+      .dot {
+        transition: opacity 0.5s ease;
+      }
+    }
+
+    /* each project container */
+    .projects__item {
+      justify-content: center;
+      align-items: center;
+      display: flex;
+
+      perspective: 50vw;
+      width: 100%;
+
+      /* each card with content */
+      .cardContainer {
+        pointer-events: auto !important;
+        transform-style: preserve-3d;
+        transition: transform 1s;
+        border-radius: 5px;
+        position: relative;
+
+        // min-width: 353.57px;
+        // min-height: 450px;
+        margin: 12.5% 0;
+        width: 27.5vw;
+        height: 35vw;
+
+        &.isFlipped {
+          transform: rotateY(180deg);
+        }
+
+        /* content of front and back cards */
+        .card {
+          box-shadow: inset 0px 0px 15px 2px rgba(0, 0, 0, 0.5);
+          -webkit-font-smoothing: subpixel-antialiased;
+          border: 10px solid rgba(0, 0, 0, 0.68);
+          background: rgb(25, 25, 25);
+          transform-style: preserve-3d;
+          backface-visibility: hidden;
+          position: absolute;
+          height: 100%;
+          width: 100%;
+
+          &:hover {
+            &::before {
+              transform: scaleX(1);
+            }
+          }
+
+          &::before {
+            -moz-transition: width 0.3s ease 0s, left 0.3s ease 0s;
+            background: rgba(10, 10, 10, 1);
+            transition: transform 0.3s ease;
+            transform: scaleX(0);
+            position: absolute;
+            display: block;
+            content: "";
+
+            height: 100%;
+            width: 100%;
+            left: 0;
+            top: 0;
+          }
+
+          .borderSpan:nth-of-type(1) {
+            transform: translateZ(5vw) scale(0.815);
+            border: 2px white solid;
+            border-bottom: none;
+            border-radius: 0.5%;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            top: 0;
+          }
+
+          /* borders inside front and back */
+          .borderSpan:nth-of-type(2) {
+            transform: translateZ(5vw) scale(0.815);
+            border-bottom: 2px solid white;
+            border-bottom-left-radius: 0.5%;
+            position: absolute;
+            height: 100%;
+            width: 32.5%;
+            left: 6.3%;
+            bottom: 0;
+          }
+
+          .borderSpan:nth-of-type(3) {
+            transform: translateZ(5vw) scale(0.815);
+            border-bottom: 2px solid white;
+            border-bottom-right-radius: 0.5%;
+            position: absolute;
+            height: 100%;
+            width: 32.5%;
+            right: 6.3%;
+            bottom: 0;
+          }
+
+          .edge {
+            border: 2px solid rgba(255, 255, 255, 1);
+            position: absolute;
+          }
+
+          .edge:nth-of-type(4) {
+            border-right: none;
+            border-top: none;
+            height: 1vw;
+            width: 1vw;
+            bottom: 0;
+            left: 0;
+          }
+
+          .edge:nth-of-type(5) {
+            border-bottom: none;
+            border-left: none;
+            height: 1vw;
+            width: 1vw;
+            right: 0;
+            top: 0;
+          }
+
+          .edge:nth-of-type(6) {
+            border-bottom: none;
+            border-right: none;
+            height: 1vw;
+            width: 1vw;
+            left: 0;
+            top: 0;
+          }
+
+          .edge:nth-of-type(7) {
+            border-top: none;
+            border-left: none;
+            height: 1vw;
+            width: 1vw;
+            right: 0;
+            bottom: 0;
+          }
+
+          /* front of the card */
+          &.cardFront {
+            // background-image: url("../images/source.gif");
+            // background-color: rgb(155, 45, 30);
+            background-position: top center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            &::after {
+              transform: skew(-20deg, 20deg) translateZ(-2.5vw) scale(0.9);
+              backface-visibility: hidden;
+              border: 2px solid white;
+              border-radius: 2px;
+              position: absolute;
+              height: 100%;
+              width: 100%;
+              content: "";
+              right: 0;
+              left: 0;
+              top: 0;
+            }
+          }
+
+          /* back of the card */
+          &.cardBack {
+            transform: rotateY(180deg);
+
+            &::after {
+              transform: skew(20deg, -20deg) translateZ(-2.5vw) scale(0.9);
+              backface-visibility: hidden;
+              border: 2px solid white;
+              border-radius: 2px;
+              position: absolute;
+              height: 100%;
+              width: 100%;
+              content: "";
+              right: 0;
+              left: 0;
+              top: 0;
+            }
+          }
+
+          /* content with title, description etc. */
+          .projectsContent {
+            -webkit-font-smoothing: subpixel-antialiased;
+            transform: translateZ(10vw) scale(0.8);
+            perspective: inherit !important;
+            position: relative;
+            display: grid;
+            height: 100%;
+            width: 100%;
+
+            /* content of face side */
+            &.face {
+              grid-template-rows: 1fr 10% 10%;
+              grid-template-columns: 1fr;
+              justify-items: center;
+              align-items: center;
+
+              .projectsTitle {
+                // text-shadow: 1px 1px 5px #ffffff, 1px -2px 5px rgba(255, 255, 255, 0.4);
+                // box-shadow: inset 0 0 3px #fff, 0 0 3px #fff;
+                // background: rgba(0, 0, 0, 0.8);
+                justify-content: center;
+                align-items: center;
+                display: flex;
+
+                border-radius: 2px;
+                font-size: 28px;
+                height: 25%;
+                width: 75%;
+              }
+            }
+
+            /* content of back side */
+            &.back {
+              grid-template-rows: 1fr 1fr 10% 10%;
+              grid-template-columns: 1fr;
+              justify-items: center;
+              align-items: center;
+
+              .techUsed {
+                font-size: 16px;
+                width: 80%;
+              }
+
+              .description {
+                font-size: 16px;
+                height: 100%;
+                width: 80%;
+              }
+            }
+          }
+        }
+
+        /* button Read More OR Go Back */
+        .cardButton {
+          // text-shadow: 0px 0px 2px rgba(255, 255, 255, 1), 1px -2px 5px rgba(255, 255, 255, 0.4);
+          // position: relative;
+          font-size: 18px;
+          background: none;
+          cursor: pointer;
+          color: white;
+          border: none;
+
+          padding: 10px 20px;
+
+          &:active {
+            // opacity: 0.6;
+          }
+
+          &:hover.cardButton::after {
+            width: 100%;
+            left: 0;
+          }
+
+          &:hover {
+            span:nth-child(1),
+            span:nth-child(3) {
+              width: 100%;
+            }
+
+            span:nth-child(2),
+            span:nth-child(4) {
+              height: 100%;
+            }
+          }
+
+          &::after {
+            -moz-transition: width 0.3s ease 0s, left 0.3s ease 0s;
+            transition: width 0.3s ease 0s, left 0.3s ease 0s;
+            background: rgba(0, 0, 0, 0.6);
+            position: absolute;
+            display: block;
+            height: 100%;
+            z-index: -1;
+            content: "";
+            left: 50%;
+            top: 0px;
+            width: 0;
+            display: none;
+          }
+
+          & > span {
+            // box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5);
+            transition: height 0.3s ease, width 0.3s ease;
+            background: rgba(255, 255, 255, 1);
+            position: absolute;
+          }
+
+          & > span:nth-child(1) {
+            transition-delay: 0.3s;
+            height: 2px;
+            width: 0;
+            left: 0;
+            top: 0;
+          }
+
+          & > span:nth-child(2) {
+            width: 2px;
+            height: 0;
+            right: 0;
+            top: 0;
+          }
+
+          & > span:nth-child(3) {
+            transition-delay: 0.3s;
+            height: 2px;
+            bottom: 0;
+            right: 0;
+            width: 0;
+          }
+
+          & > span:nth-child(4) {
+            width: 2px;
+            height: 0;
+            bottom: 0;
+            left: 0;
+          }
+        }
+
+        /* date at the bottom of the card */
+        .projectsDate {
+          // text-shadow: 0px 0px 2px rgba(255, 255, 255, 1), 1px -2px 5px rgba(255, 255, 255, 0.4);
+          padding-right: 10px;
+          padding-left: 10px;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}

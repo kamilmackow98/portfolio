@@ -1,0 +1,44 @@
+@font-face {
+  src: local("Saira"), url("../fonts/Saira-Regular.ttf") format("truetype");
+  font-family: "Saira";
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Saira";
+}
+
+html,
+body,
+#root,
+.app {
+  flex-direction: column;
+  overflow-x: hidden; // for transform scale (otherwise not necessary)
+  min-height: 100%;
+  min-width: 300px;
+  display: flex;
+  height: auto;
+  width: 100%;
+  margin: 0;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(255, 255, 255);
+  border-radius: 1px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(70, 70, 70);
+}

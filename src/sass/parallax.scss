@@ -1,0 +1,103 @@
+// container
+#parallaxContainer {
+  position: relative;
+  max-height: 1120px;
+  min-height: 600px;
+  overflow: hidden;
+  display: block;
+  height: 100vh;
+  // z-index: -1;
+}
+
+// for each layer with images
+.layer {
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: 100%; // on mobile remove background-size
+  min-height: 600px;
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+}
+
+#layer-0 {
+  background-image: url("../images/parallax/background.png");
+}
+
+#layer-1 {
+  background-image: url("../images/parallax/05.png");
+}
+
+#layer-2 {
+  background-image: url("../images/parallax/04.png");
+}
+
+#layer-3 {
+  background-image: url("../images/parallax/03.png");
+}
+
+#layer-4 {
+  background-image: url("../images/parallax/02.png");
+}
+
+#layer-5 {
+  background-image: url("../images/parallax/01.png");
+}
+
+#layer-6 {
+  background-image: url("../images/parallax/spiderman.png");
+  background-repeat: no-repeat;
+}
+
+// arrow pointing down - scroll link to about section
+.layer:nth-child(7) > div > div {
+  text-shadow: 0px 0px 2px #ffffff, 1px -2px 10px rgba(255, 255, 255, 0.5);
+  position: relative;
+  cursor: default;
+  font-size: 2em;
+  top: 90vh;
+
+  & > span {
+    -webkit-animation: arrowLink 1.5s infinite;
+    animation: arrowLink 1.5s infinite;
+    -webkit-transform: rotate(-45deg);
+    border-bottom: 3px solid #fff;
+    border-left: 3px solid #fff;
+    transform: rotate(-45deg);
+    margin-left: -15px;
+    position: absolute;
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    left: 50%;
+    top: -65px;
+  }
+}
+
+@keyframes arrowLink {
+  0% {
+    transform: rotate(-45deg) translate(0, 0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(-45deg) translate(-20px, 20px);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes arrowLink {
+  0% {
+    -webkit-transform: rotate(-45deg) translate(0, 0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: rotate(-45deg) translate(-20px, 20px);
+    opacity: 0;
+  }
+}
