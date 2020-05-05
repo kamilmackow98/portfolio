@@ -100,10 +100,6 @@ const Projects = () => {
               <span className="edge edge3"></span>
               <span className="edge edge4"></span>
 
-              <span className="animSpan animSpan1"></span>
-              <span className="animSpan animSpan2"></span>
-              <span className="animSpan animSpan3"></span>
-              <span className="animSpan animSpan4"></span>
             </div>
 
             {/* back side of the card */}
