@@ -6,46 +6,46 @@
   overflow: hidden;
   display: block;
   height: 100vh;
-  // z-index: -1;
 }
 
 // for each layer with images
 .layer {
-  background-position: bottom center;
+  background-position: top center;
   background-repeat: no-repeat;
   background-size: 100%; // on mobile remove background-size
   min-height: 600px;
-  position: fixed;
+  position: absolute;
   height: 100vh;
   width: 100%;
 }
 
 #layer-0 {
-  background-image: url("../images/parallax/background.png");
+  background-image: url("../images/revertedP/background.png");
 }
 
 #layer-1 {
-  background-image: url("../images/parallax/05.png");
+  background-image: url("../images/revertedP/05.png");
 }
 
 #layer-2 {
-  background-image: url("../images/parallax/04.png");
+  background-image: url("../images/revertedP/04.png");
 }
 
 #layer-3 {
-  background-image: url("../images/parallax/03.png");
+  background-image: url("../images/revertedP/03.png");
 }
 
 #layer-4 {
-  background-image: url("../images/parallax/02.png");
+  background-image: url("../images/revertedP/02.png");
 }
 
 #layer-5 {
-  background-image: url("../images/parallax/01.png");
+  background-image: url("../images/revertedP/01.png");
 }
 
 #layer-6 {
-  background-image: url("../images/parallax/spiderman.png");
+  background-image: url("../images/revertedP/spiderman.png");
+  background-position: center;
   background-repeat: no-repeat;
 }
 

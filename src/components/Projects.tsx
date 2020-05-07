@@ -19,6 +19,7 @@ const Projects = () => {
     flickity.current = new Flickity("#projectsContainer", {
       percentPosition: true,
       dragThreshold: 25,
+      pageDots: false,
       // contain: true
     });
 
@@ -65,7 +66,6 @@ const Projects = () => {
   return (
     <>
       {ProjectsCollection.map((project, i) => (
-        
         <div className="projects__item" key={i}>
           <div className="cardContainer">
             {/* front side of the card*/}
@@ -74,8 +74,8 @@ const Projects = () => {
                 <div className="projectsTitle">{project.title}</div>
 
                 <div className="techUsed">
-                  <div>- Technology used -</div>
-                  {project.progLang.join(", ").split(" ,")}
+                  <div>Technology used</div>
+                  {project.progLang.join(" - ")}
                 </div>
 
                 <div className="cardButton frontButton">
@@ -99,15 +99,30 @@ const Projects = () => {
               <span className="edge edge2"></span>
               <span className="edge edge3"></span>
               <span className="edge edge4"></span>
-
             </div>
 
             {/* back side of the card */}
             <div className="card cardBack">
               <div className="projectsContent back">
-                <div className="description">
-                  <div>- About -</div>
-                  {project.description}
+                <div className="project__wrap">
+                  <div>About</div>
+                  <hr/>
+                  <div className="project__desc">{project.description}</div>
+                  <hr />
+                  {project.link ? (
+                    <a className="project__link" href={`${project.link}`} target="_blank" rel="noopener noreferrer">
+                      Preview
+                    </a>
+                  ) : (
+                    <div className="project__link">No preview available</div>
+                  )}
+                  {project.code ? (
+                    <a className="project__code" href={`${project.code}`} target="_blank" rel="noopener noreferrer">
+                      Code
+                    </a>
+                  ) : (
+                    <div className="project__code">No code available</div>
+                  )}
                 </div>
 
                 <div className="cardButton backButton">
@@ -148,6 +163,8 @@ export interface ProjectsProps {
   title: string;
   progLang: string[];
   description: string;
+  link?: string;
+  code?: string;
   date: string;
 }
 

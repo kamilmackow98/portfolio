@@ -78,7 +78,8 @@ const App = () => {
     let arrowLink = document.getElementsByClassName("arrowLink")[0];
 
     arrowLink.addEventListener("click", function () {
-      let aboutTopPosition = sections[1].offsetTop; // about top position
+      let aboutTopPosition = sections[0].offsetTop; // about top position
+
       window.scrollTo({ top: aboutTopPosition, behavior: "smooth" });
     });
   }, []);
@@ -87,9 +88,8 @@ const App = () => {
     <div className="app">
       <NavBar />
 
-      <section className="sectionContainer">
-        <Parallax />
-      </section>
+      <Parallax />
+      {/* parallax used to be inside a section with class="sectionContainer" */}
       <div className="contentWrap">
         <section className="sectionContainer">
           <About
@@ -125,6 +125,15 @@ const App = () => {
 
 export let ProjectsCollection: ProjectsProps[] = [
   {
+    title: "Music Player",
+    description:
+      "A music player inspired by CaTRoX theme for Foobar2000. Designed mainly to play several songs from different albums. User can drag, open or add audio files which will then be added to the main playlist. Thanks to JS Media Tags, the album cover for each song can be displayed with other song information. User can also search for the lyrics of the current song thanks to the Happi API.",
+    progLang: ["Scss", "ReactJS", "TypeScript", "JS MediaTags", "Happi API"],
+    link: "https://kamilmackow98.github.io/player/",
+    code: "https://github.com/kamilmackow98/player/tree/master",
+    date: "04 - 2020",
+  },
+  {
     title: "CCV Web APP",
     description:
       "Une application web qui permet de se prendre en photo et s'enregistrer par les vendeurs et les clients de boutiques CCV",
@@ -132,16 +141,10 @@ export let ProjectsCollection: ProjectsProps[] = [
     date: "06 - 2019",
   },
   {
-    title: "Management Software",
-    description: "Test description",
-    progLang: ["Java", "JavaFX", "mySQL", "Git"],
-    date: "08 - 2018",
-  },
-  {
-    title: "Music Player",
-    description: "Future Project",
-    progLang: ["ReactJS", "TypeScript", "Spotify API"],
-    date: "04 - 2020",
+    title: "WordPress plugin modification",
+    description: "Modification of WordPress plugin AmeliaBooking for iFonAssist website.",
+    progLang: ["JavaScript", "PHP", "WordPress"],
+    date: "05 - 2019",
   },
 ];
 

@@ -26,38 +26,39 @@ const Parallax = () => {
 
     return (
         // 0 0.10 0.20 0.40. 0.60 1.00
+        // last 0 0.10 0.25 0.40 0.60 0.90
         <div id="parallaxContainer">
             <div className="layer" data-depth="0.00" id="layer-0">
                 <div>
                     <span>First</span>
                 </div>
             </div>
-            <div className="layer" data-depth="0.10" id="layer-1">
+            <div className="layer" data-depth="-0.10" id="layer-1">
                 <div>
                     <span></span>
                 </div>
             </div>
-            <div className="layer" data-depth="0.25" id="layer-2">
+            <div className="layer" data-depth="-0.25" id="layer-2">
                 <div>
                     <span></span>
                 </div>
             </div>
-            <div className="layer" data-depth="0.40" id="layer-3">
+            <div className="layer" data-depth="-0.50" id="layer-3">
                 <div>
                     <span></span>
                 </div>
             </div>
-            <div className="layer" data-depth="0.60" id="layer-4">
+            <div className="layer" data-depth="-0.70" id="layer-4">
                 <div>
                     <span></span>
                 </div>
             </div>
-            <div className="layer" data-depth="0.90" id="layer-5">
+            <div className="layer" data-depth="-1" id="layer-5">
                 <div>
                     <span></span>
                 </div>
             </div>
-            <div className="layer" data-depth="-0.25" id="layer-6">
+            <div className="layer" data-depth="0.4" id="layer-6">
                 <div>
                     <div>
                     <span className="arrowLink"></span>
