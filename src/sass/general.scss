@@ -16,15 +16,20 @@ body,
   overflow-x: hidden; // for transform scale (otherwise not necessary)
   min-height: 100%;
   min-width: 300px;
-  display: flex;
+  // display: flex;
   height: auto;
   width: 100%;
   margin: 0;
 }
 
-.app {
-  background-color: rgb(15, 15, 15);
+body, #root, .app {
+  background-color: $primary;
 }
+
+.app {
+  overflow: hidden;
+}
+
 
 /* width */
 ::-webkit-scrollbar {
@@ -36,7 +41,7 @@ body,
   background: rgb(10, 10, 10);
 }
 
-/* Handle */
+/* Handle */ 
 ::-webkit-scrollbar-thumb {
   background: rgb(25, 25, 25);
 }

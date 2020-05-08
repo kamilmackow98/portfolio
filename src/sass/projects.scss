@@ -50,11 +50,12 @@
 
     &::before,
     &::after {
-      // color: rgb(145, 45, 30);
-      color: rgb(15, 15, 15);
+      color: rgb(145, 45, 30);
       position: absolute;
+      opacity: 0.5;
       z-index: -1;
 
+      animation: floating 6s ease-in-out infinite alternate;
       font-size: calc(24px + 10vw);
     }
 
@@ -65,9 +66,19 @@
     }
 
     &::before {
+      font-size: calc(24px + 8vw);
+      animation-duration: 5s;
+      animation-delay: 250ms;
+
       content: "Work";
-      right: 10%;
-      bottom: 15%;
+      bottom: 20%;
+      right: 15%;
+    }
+
+    @keyframes floating {
+      100% {
+        transform: translate3d(0px, 75px, 0);
+      }
     }
 
     -webkit-clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
@@ -141,10 +152,10 @@
         /* content of front and back cards */
         .card {
           box-shadow: inset 0 0 15px 2px rgba(0, 0, 0, 0.5);
-          border: 10px solid rgba(0, 0, 0, 0.68);
-          background-color: rgb(25, 25, 25);
+          border: 4px solid rgba(0, 0, 0, 0.2);
           transform-style: preserve-3d;
           backface-visibility: hidden;
+          background-color: $primary;
           position: absolute;
           height: 100%;
           width: 100%;

@@ -2,7 +2,6 @@ import Projects, { ProjectsProps } from "./components/Projects";
 import Skills, { SkillsProps } from "./components/Skills";
 import Parallax from "./components/Parallax";
 import React, { useEffect } from "react";
-import NavBar from "./components/NavBar";
 import About from "./components/About";
 import More from "./components/More";
 
@@ -18,11 +17,12 @@ const App = () => {
     // window.onbeforeunload = function() {
     //     window.scrollTo(0, 0);
     // };
-
+    /*
     let navBar = document.getElementsByClassName("navBar") as HTMLCollectionOf<HTMLElement>;
     let currentScrollTop = 0;
     let c: number;
 
+    
     // hide or show up the nav bar
     window.addEventListener("scroll", function (event) {
       let top = this.pageYOffset; // scroll position
@@ -47,7 +47,6 @@ const App = () => {
 
     // event listener for each nav link, on click will scroll to its section
     let navLinks = document.getElementsByClassName("navItem");
-    let sections = document.getElementsByClassName("sectionContainer") as HTMLCollectionOf<HTMLElement>;
 
     // for each nav link add click event
     for (let i = 0; i < navLinks.length; i++) {
@@ -72,7 +71,9 @@ const App = () => {
         //     inline: "nearest"
         // });
       });
-    }
+    } */
+    /*
+    let sections = document.getElementsByClassName("sectionContainer") as HTMLCollectionOf<HTMLElement>;
 
     //arrow link to scroll to about section
     let arrowLink = document.getElementsByClassName("arrowLink")[0];
@@ -81,14 +82,14 @@ const App = () => {
       let aboutTopPosition = sections[0].offsetTop; // about top position
 
       window.scrollTo({ top: aboutTopPosition, behavior: "smooth" });
-    });
+    }); */
   }, []);
 
   return (
     <div className="app">
-      <NavBar />
+      {/* <NavBar /> */}
 
-      <Parallax />
+      {/* <Parallax /> */}
       {/* parallax used to be inside a section with class="sectionContainer" */}
       <div className="contentWrap">
         <section className="sectionContainer">
@@ -100,11 +101,9 @@ const App = () => {
         </section>
 
         <section>
-          <Skills
-            skills={SkillsCollection.skills}
-            softwares={SkillsCollection.softwares}
-            toolsAndOthers={SkillsCollection.toolsAndOthers}
-          />
+          {/* <h2>I consider myself...</h2> */}
+
+          <Skills great={SkillsCollection.great} good={SkillsCollection.good} ok={SkillsCollection.ok} />
         </section>
 
         <section className="sectionContainer" id="projectsContainer">
@@ -141,7 +140,7 @@ export let ProjectsCollection: ProjectsProps[] = [
     date: "06 - 2019",
   },
   {
-    title: "WordPress plugin modification",
+    title: "WordPress plugin",
     description: "Modification of WordPress plugin AmeliaBooking for iFonAssist website.",
     progLang: ["JavaScript", "PHP", "WordPress"],
     date: "05 - 2019",
@@ -153,9 +152,9 @@ export let ProjectsCollection: ProjectsProps[] = [
 // -----------------------------------------
 
 export let SkillsCollection: SkillsProps = {
-  softwares: ["Gimp 2", "Vegas Pro", "Audacity", "Adobe After Effects", "Adobe Photoshop"],
-  skills: ["JavaScript", "PHP", "Java", "C", "MySQL"],
-  toolsAndOthers: ["HTML / CSS", "Git", "WordPress", "XAMPP", "ReactJS"],
+  great: ["HTML", "CSS / SCSS", "JavaScript", "TypeScript", "Adobe Photoshop", "Gimp 2"],
+  good: ["ReactJS", "jQuery", "PHP", "MySQL", "XAMPP", "WordPress"],
+  ok: ["C / C++", "Java", "GIT", "Audacity", "Adobe After Effects", "Vegas Pro"],
 };
 
 export default App;
