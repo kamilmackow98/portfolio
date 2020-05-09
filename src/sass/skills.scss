@@ -652,24 +652,46 @@
     padding: 200px 0;
     font-size: 16px;
 
-    &::after {
+    .bgText {
       position: absolute;
-      content: "Skills";
-      // height: 100%;
-      // width: 100%;
+      display: flex;
+
+      color: $fourth;
       left: 50%;
       top: 0;
 
-      margin: 0;
-
-      // z-index: -1;
-
-      // text-shadow: -2px 2px 5px rgba(0, 0, 0, 0.5);
-
       font-size: calc(24px + 10vw);
-      color: $third;
 
-      animation: floating 4s infinite ease-in-out alternate;
+      span {
+        animation: bounce 3s ease-in-out infinite alternate;
+        pointer-events: none;
+        user-select: none;
+
+        text-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+
+        &:nth-child(2) {
+          animation-delay: 0.2s;
+        }
+        &:nth-child(3) {
+          animation-delay: 0.4s;
+        }
+        &:nth-child(4) {
+          animation-delay: 0.6s;
+        }
+        &:nth-child(5) {
+          animation-delay: 0.8s;
+        }
+        &:nth-child(6) {
+          animation-delay: 1s;
+        }
+      }
+    }
+
+    @keyframes bounce {
+      100% {
+        transform: translate3d(0, -80px, 0);
+        text-shadow: 0 40px 20px rgba(0, 0, 0, 0.1);
+      }
     }
 
     @keyframes floating {
@@ -685,8 +707,8 @@
       width: 100%;
 
       .skills__content {
-        background-color: rgba($primary, 0.75);
         box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2), 0 0 8px rgba(0, 0, 0, 0.25);
+        background-color: rgba($primary, 0.75);
         position: relative;
 
         flex-direction: column;
@@ -752,11 +774,11 @@
         min-width: 200px;
         width: 50%;
 
-        border-bottom: 1px solid $third;
-        border-top: 1px solid $third;
+        border-bottom: 1px solid $fourth;
+        border-top: 1px solid $fourth;
 
         &:hover {
-          background: $third;
+          background: $fourth;
           width: 80%;
           opacity: 1;
           color: white;

@@ -43,17 +43,19 @@
 @media screen and (min-width: 1px) {
   /* project container but also <section> */
   #projectsContainer {
-    background-color: rgb(10, 10, 10);
+    background-color: $secondary;
     position: relative;
     height: auto;
     width: 100%;
 
     &::before,
     &::after {
-      color: rgb(145, 45, 30);
+      // color: rgb(145, 45, 30);
       position: absolute;
+      color: $fourth;
       opacity: 0.5;
       z-index: -1;
+
 
       animation: floating 6s ease-in-out infinite alternate;
       font-size: calc(24px + 10vw);
@@ -206,8 +208,8 @@
 
           /* dark background on hover */
           &::before {
-            background: rgba(10, 10, 10, 1);
             transition: transform 300ms ease;
+            background: $secondary;
             transform: scaleX(0);
             position: absolute;
             content: "";

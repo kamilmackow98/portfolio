@@ -6,6 +6,7 @@ import About from "./components/About";
 import More from "./components/More";
 
 import "./sass/App.scss";
+import Timeline from "./components/Timeline";
 
 /**
  * TODO : cleanUp every eventListener in useEffect()
@@ -98,6 +99,10 @@ const App = () => {
             contactInfo={"kamilmackow98@gmail.com 07 82 29 80 77"}
             description={"Web Developer..."}
           />
+        </section>
+
+        <section>
+          <Timeline />
         </section>
 
         <section>

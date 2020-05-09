@@ -38,15 +38,15 @@ body, #root, .app {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: rgb(10, 10, 10);
+  background: $secondary;
 }
 
 /* Handle */ 
 ::-webkit-scrollbar-thumb {
-  background: rgb(25, 25, 25);
+  background: $fourth;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: rgb(40, 40, 40);
+  background: lighten($fourth, 5%);
 }
