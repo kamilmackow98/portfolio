@@ -661,13 +661,13 @@
       top: 0;
 
       font-size: calc(24px + 10vw);
+      font-family: Saira-Medium;
+      pointer-events: none;
+      user-select: none;
 
       span {
         animation: bounce 3s ease-in-out infinite alternate;
-        pointer-events: none;
-        user-select: none;
-
-        text-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        text-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
 
         &:nth-child(2) {
           animation-delay: 0.2s;
@@ -707,7 +707,8 @@
       width: 100%;
 
       .skills__content {
-        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2), 0 0 8px rgba(0, 0, 0, 0.25);
+        // box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2), 0 0 8px rgba(0, 0, 0, 0.25);
+        border: 3px solid $fourth;
         background-color: rgba($primary, 0.75);
         position: relative;
 

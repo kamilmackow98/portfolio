@@ -28,7 +28,7 @@ const Skills = (props: SkillsProps) => {
   return (
     <div className="skills__container">
       <div className="bgText">
-        <span className="first">S</span>
+        <span>S</span>
         <span>k</span>
         <span>i</span>
         <span>l</span>

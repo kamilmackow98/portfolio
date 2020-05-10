@@ -3,9 +3,18 @@
   font-family: "Saira";
 }
 
+@font-face {
+  src: local("Saira-Bold"), url("../fonts/Saira-Bold.ttf") format("truetype");
+  font-family: "Saira-Bold";
+}
+
+@font-face {
+  src: local("Saira-Medium"), url("../fonts/Saira-Medium.ttf") format("truetype");
+  font-family: "Saira-Medium";
+}
+
 * {
   box-sizing: border-box;
-  font-family: "Saira";
 }
 
 html,
@@ -22,14 +31,16 @@ body,
   margin: 0;
 }
 
-body, #root, .app {
+body,
+#root,
+.app {
   background-color: $primary;
 }
 
 .app {
+  font-family: "Saira";
   overflow: hidden;
 }
-
 
 /* width */
 ::-webkit-scrollbar {
@@ -41,7 +52,7 @@ body, #root, .app {
   background: $secondary;
 }
 
-/* Handle */ 
+/* Handle */
 ::-webkit-scrollbar-thumb {
   background: $fourth;
 }

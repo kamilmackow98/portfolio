@@ -94,11 +94,7 @@ const App = () => {
       {/* parallax used to be inside a section with class="sectionContainer" */}
       <div className="contentWrap">
         <section className="sectionContainer">
-          <About
-            name={"Kamil Maćków"}
-            contactInfo={"kamilmackow98@gmail.com 07 82 29 80 77"}
-            description={"Web Developer..."}
-          />
+          <About />
         </section>
 
         <section>
