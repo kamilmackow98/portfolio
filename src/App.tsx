@@ -1,6 +1,6 @@
 import Projects, { ProjectsProps } from "./components/Projects";
 import Skills, { SkillsProps } from "./components/Skills";
-import Parallax from "./components/Parallax";
+// import Parallax from "./components/Parallax";
 import React, { useEffect } from "react";
 import About from "./components/About";
 import More from "./components/More";

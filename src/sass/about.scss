@@ -1,19 +1,18 @@
+$helloSize: calc(24px + 4vw);
+$interestsSize: calc(16px + 2vw);
+$interestsSizeFix: calc(20px + 3vw);
+
 .about__container {
   position: relative;
   padding: 100px 0;
-
-  display: flex;
-  flex-direction: column;
-
-  justify-content: center;
 
   .bgText {
     position: absolute;
     display: flex;
 
-    color: $fourth;
-    left: 5%;
-    top: 10%;
+    color: #077e46;
+    right: 10%;
+    top: 20%;
 
     font-size: calc(24px + 10vw);
     pointer-events: none;
@@ -23,7 +22,6 @@
 
     span {
       animation: bounce 3s ease-in-out infinite alternate;
-
       text-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
 
       &:nth-child(2) {
@@ -45,52 +43,100 @@
   }
 
   .about__content {
-    height: 100%;
-    width: 50%;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    background-color: $third;
+
+    align-items: flex-start;
+    flex-direction: column;
+    display: flex;
+
+    padding: 75px 0;
     z-index: 1;
 
-    align-self: flex-end;
+    .about__item {
+      position: relative;
+      display: flex;
+      left: 5%;
+    }
+
+    .list {
+      animation: ticker 8s ease infinite;
+      pointer-events: none;
+      user-select: none;
+      list-style: none;
+      display: table;
+
+      font-weight: bold;
+      text-align: left;
+
+      margin-left: 10px;
+    }
 
     .slideshow {
-      justify-content: center;
+      line-height: $helloSize;
+      height: $helloSize;
       overflow: hidden;
-      display: flex;
-
-      height: 120px;
-
-      // border: 1px solid blue;
 
       .title {
+        position: relative;
         user-select: none;
-        list-style: none;
         margin: 0;
 
-        font-weight: Bold;
-        font-size: 80px;
+        letter-spacing: 0.25vw;
+        font-size: $helloSize;
+        font-weight: bold;
       }
 
-      ul {
-        // border: 1px solid green;
-        margin-left: 10px;
+      .list {
+        letter-spacing: 0.25vw;
+        font-size: $helloSize;
+      }
+    }
 
+    .interests {
+      line-height: $interestsSizeFix;
+      height: $interestsSizeFix;
+      overflow: hidden;
+      color: $fourth;
+
+      .like {
+        position: relative;
+        user-select: none;
+        margin: 0;
+
+        font-size: $interestsSize;
         font-weight: bold;
-        font-size: 80px;
+      }
 
-        animation: slide 4s infinite;
+      .list {
+        font-size: $interestsSize;
+
+        li {
+          color: #077e46;
+        }
       }
     }
   }
 }
 
-@keyframes slide {
-  0%, 25% {
+@keyframes ticker {
+  0%,
+  20% {
+    transform: translateY(-80%);
+  }
+  25%,
+  45% {
+    transform: translateY(-60%);
+  }
+  50%,
+  70% {
+    transform: translateY(-40%);
+  }
+  75%,
+  95% {
+    transform: translateY(-20%);
+  }
+  100% {
     transform: translateY(0%);
   }
-  50%, 75% {
-    transform: translateY(-100%);
-  }
-  100%, 0% {
-    transform: translateY(0%);
-  }
-  
 }

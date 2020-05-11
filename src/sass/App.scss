@@ -28,7 +28,7 @@ ul {
     position: fixed;
     content: "";
     bottom: 0;
-    left: 33.25%;
+    left: 25%;
     top: 0;
 
     transform: translate3d(-50%, 0, 0);
@@ -45,12 +45,4 @@ section {
   // min-height: $minWindowHeigh;
   // flex-direction: column;
   // display: flex;
-}
-
-// on desktop
-@media screen and (min-width: 1023px) {
-  section {
-    // min-height: 100vh;
-    // height: auto;
-  }
 }
