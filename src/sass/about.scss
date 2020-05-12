@@ -51,7 +51,6 @@ $interestsSizeFix: calc(20px + 3vw);
     display: flex;
 
     padding: 75px 0;
-    z-index: 1;
 
     .about__item {
       position: relative;
@@ -82,6 +81,8 @@ $interestsSizeFix: calc(20px + 3vw);
         user-select: none;
         margin: 0;
 
+        left: -0.85%; // align with rest of the text
+
         letter-spacing: 0.25vw;
         font-size: $helloSize;
         font-weight: bold;
@@ -104,6 +105,8 @@ $interestsSizeFix: calc(20px + 3vw);
         user-select: none;
         margin: 0;
 
+        left: -0.6%;
+
         font-size: $interestsSize;
         font-weight: bold;
       }
@@ -115,6 +118,40 @@ $interestsSizeFix: calc(20px + 3vw);
           color: #077e46;
         }
       }
+    }
+
+    .description,
+    .typewriter {
+      font-family: Saira-Medium;
+      font-size: 20px;
+      color: #777;
+
+      text-align: left;
+    }
+
+    .description {
+      // height: 70px;
+    }
+
+    .desc,
+    .text-type {
+      &::selection {
+        background-color: rgba($fourth, 0.99);
+        color: $secondary;
+      }
+    }
+
+    .desc {
+      margin: 0;
+    }
+
+    .text-type {
+      white-space: pre-wrap;
+    }
+
+    .typed-cursor {
+      pointer-events: none;
+      user-select: none;
     }
   }
 }

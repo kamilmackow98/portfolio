@@ -7,7 +7,7 @@
   display: grid;
   z-index: 1;
 
-  grid-auto-rows: 1fr;
+  grid-template-rows: repeat(4, 1fr) auto;
   row-gap: 25px;
 
   &::before {
@@ -124,7 +124,8 @@
       color: #777;
     }
 
-    p {
+    p,
+    .type {
       font-size: 16px;
       color: #777;
       margin: 0;

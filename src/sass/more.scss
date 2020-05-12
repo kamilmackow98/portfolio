@@ -1,164 +1,61 @@
-// make so that when hover on icon of social media -> the icon will float a little bit to the top and add some text decoration (example on animejs.com)
+.more__container {
+  justify-content: center;
+  display: flex;
+  padding: 50px 0;
 
-.moreContainer {
-  grid-template-rows: 1fr auto;
-  grid-template-columns: 1fr;
-  min-height: 100vh;
-  display: grid;
-  height: auto;
+    ul {
+      display: flex;
+      width: auto;
 
-  display: none;
+      padding: 0;
+      margin: 0;
 
-  .moreGridItem {
-    grid-template-columns: 1fr 1fr 1fr;
-    justify-items: center;
-    align-items: center;
-    min-height: 300px;
-    display: grid;
-    height: auto;
-
-    .moreContent {
-      grid-template-columns: 1fr;
-      grid-template-rows: 1fr;
-      justify-items: center;
-      align-items: center;
-      display: grid;
-      height: 100%;
-      width: 100%;
-
-      &:nth-child(1) .moreCircle {
-        justify-self: end;
-      }
-
-      &:nth-child(3) .moreCircle {
-        justify-self: start;
-      }
-
-      & > .moreCircle {
-        background: rgb(25, 25, 25);
-        grid-template-columns: 1fr;
-        position: relative;
-        border-radius: 50%;
-        min-height: 200px;
-        min-width: 200px;
-        display: grid;
-        height: 18vw;
-        width: 18vw;
-
-        transition: all 0.25s ease;
-
-        &:hover {
-          box-shadow: 0 0 5px rgb(255, 255, 255), inset 0 0 5px rgb(255, 255, 255), -20px 20px 10px rgba(0, 0, 0, 0.5);
-          border: 1px solid white;
-          transform: translateY(-20px);
-          opacity: 1;
-
-          transition: all 0.25s ease;
-
-          &::after {
-            transform: translateY(20px);
-
-            transition: all 0.25s ease;
-          }
-
-          & > .moreText {
-            opacity: 1;
-
-            transition: all 0.25s ease;
-          }
-        }
-
-        &::after {
-          border: 2px solid rgba(255, 255, 255, 0.1);
-          border-radius: 100%;
-          position: absolute;
-          bottom: -20px;
-          height: 100%;
-          left: -20px;
-          width: 100%;
-          content: "";
-          z-index: -1;
-
-          transition: all 0.25s ease;
-        }
-
-        & > .moreText {
-          padding: 20px;
-          justify-self: center;
-          align-self: end;
-          opacity: 0;
-          pointer-events: none;
-
-          transition: all 0.25s ease;
-        }
-      }
-    }
-
-    // grid item with contact info or find me on...
-    &:last-of-type {
-      grid-template-columns: 1fr;
-      justify-items: center;
-      min-height: 70px;
-      align-items: end;
-      align-self: end;
-      height: 100%;
-
-      ul {
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        justify-items: center;
-        display: grid;
-        width: auto;
-
+      li {
+        justify-content: center;
+        pointer-events: none;
+        min-width: 75px;
+        display: flex;
+        width: 5vw;
+        padding: 0;
         margin: 0;
 
-        li {
+        a {
+          font-size: 16px;
           justify-items: center;
-          pointer-events: none;
-          min-width: 75px;
+          text-decoration: none;
+          pointer-events: auto;
+          width: fit-content;
+          color: white;
           display: grid;
-          width: 5vw;
-          padding: 0;
-          margin: 0;
 
-          a {
-            font-size: calc(10px + 0.35vw);
-            justify-items: center;
-            text-decoration: none;
-            pointer-events: auto;
-            width: fit-content;
+          &:hover {
+            & img {
+              transition: transform 0.25s ease;
+              transform: translateY(-15px);
+            }
+
+            & span {
+              text-shadow: 0px 0px 4px #ffffff, 1px -2px 5px rgba(255, 255, 255, 0.2);
+              transition: text-shadow 0.25s ease;
+            }
+          }
+
+          span {
+            transition: text-shadow 0.5s ease;
+          }
+
+          img {
+            transition: transform 0.5s ease;
+            filter: invert(100%);
+            min-width: 40px;
             color: white;
-            display: grid;
-
-            &:hover {
-              & img {
-                transition: transform 0.25s ease;
-                transform: translateY(-15px);
-              }
-
-              & span {
-                text-shadow: 0px 0px 4px #ffffff, 1px -2px 5px rgba(255, 255, 255, 0.2);
-                transition: text-shadow 0.25s ease;
-              }
-            }
-
-            span {
-              transition: text-shadow 0.5s ease;
-            }
-
-            img {
-              transition: transform 0.5s ease;
-              filter: invert(100%);
-              min-width: 40px;
-              color: white;
-              width: 2.5vw;
-            }
+            width: 2.5vw;
           }
+        }
 
-          &:nth-child(3) a img {
-            padding: 0.15vw;
-          }
+        &:nth-child(3) a img {
+          padding: 0.15vw;
         }
       }
     }
-  }
 }

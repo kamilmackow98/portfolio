@@ -6,13 +6,13 @@
   overflow: hidden;
   display: block;
   height: 100vh;
-
+  
   display: none;
 }
 
 // for each layer with images
 .layer {
-  background-position: bottom center;
+  background-position: top center;
   background-repeat: no-repeat;
   background-size: 100%; // on mobile remove background-size
   min-height: 600px;

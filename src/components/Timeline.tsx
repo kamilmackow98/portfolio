@@ -1,17 +1,31 @@
 import React from "react";
+import Typed from "typed.js";
 
 const Timeline = () => {
+  React.useEffect(() => {
+    let txt = ["Let's talk about it!^1000 Give me a chance to contribute to the future of your business!"];
+
+    let options = {
+      strings: txt,
+      typeSpeed: 50,
+      backSpeed: 40,
+      backDelay: 1000,
+      startDelay: 200,
+    };
+
+    new Typed(".timeline-txt", options);
+  }, []);
+
   return (
     <div className="timeline__container">
-
       <span className="topShadow"></span>
       <span className="botShadow"></span>
-      
+
       <div className="timeline__item">
         <div className="content">
           <div className="year">1998</div>
           <div className="title">I'm born</div>
-          <p>That actually happened</p>
+          <p>Unbelievable but it's true</p>
         </div>
       </div>
 
@@ -35,15 +49,15 @@ const Timeline = () => {
         <div className="content">
           <div className="year">04 / 2019 - 06 / 2019</div>
           <div className="title">Internship at 3d2lux</div>
-          <p>Internship - Web development WordPress, JavaScript & PHP</p>
+          <p>Web development WordPress, JavaScript & PHP</p>
         </div>
       </div>
 
       <div className="timeline__item">
         <div className="content">
           <div className="year">Now</div>
-          <div className="title">Your company?</div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus, commodi.</p>
+          <div className="title">Your company? An interesting project?</div>
+          <div className="type"><span className="timeline-txt"></span></div>
         </div>
       </div>
     </div>
