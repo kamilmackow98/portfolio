@@ -57,7 +57,9 @@ const Timeline = () => {
         <div className="content">
           <div className="year">Now</div>
           <div className="title">Your company? An interesting project?</div>
-          <div className="type"><span className="timeline-txt"></span></div>
+          <div className="type">
+            <span className="timeline-txt"></span>
+          </div>
         </div>
       </div>
     </div>

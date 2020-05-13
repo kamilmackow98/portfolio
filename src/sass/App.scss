@@ -1,6 +1,5 @@
 @import "./variables.scss";
 @import "./general.scss";
-@import "./navbar.scss";
 @import "./parallax.scss";
 @import "./about.scss";
 @import "./timeline.scss";
@@ -24,6 +23,10 @@ ul {
   height: 100%;
   width: 100%;
   z-index: 1;
+
+  clip-path: polygon(25% 1.5%, 100% 0%, 100% 100%, 0 100%, 0 0%);
+  margin-top: -100px;
+  padding-top: 200px;
 
   &::before {
     position: absolute;

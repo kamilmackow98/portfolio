@@ -133,8 +133,8 @@
       /* each card with content */
       .cardContainer {
         pointer-events: auto !important;
-        transform-style: preserve-3d;
         -moz-transition: transform 1s;
+        transform-style: preserve-3d;
         transition: transform 1s;
         border-radius: 5px;
         position: relative;

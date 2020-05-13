@@ -6,7 +6,7 @@ const About = () => {
     let txt = [
       "I am a JavaScript developer.",
       "I am a ReactJS developer.",
-      "You should check my work!^1000 (you might like it)",
+      "You should check my work!",
       "Nobody expects the Spanish Inquisition!",
     ];
 

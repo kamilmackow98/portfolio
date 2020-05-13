@@ -3,59 +3,118 @@
   display: flex;
   padding: 50px 0;
 
-    ul {
-      display: flex;
-      width: auto;
+  ul,
+  li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
 
-      padding: 0;
-      margin: 0;
+  ul {
+    display: flex;
+    width: auto;
 
-      li {
+    li {
+      margin: 0 15px;
+
+      &:nth-child(1) a::after {
+        content: "My CV";
+      }
+
+      &:nth-child(2) a::after {
+        content: "+33 7 82 29 80 77";
+      }
+
+      &:nth-child(3) a::after {
+        content: "Facebook";
+      }
+
+      &:nth-child(4) a::after {
+        content: "LinkedIn";
+      }
+
+      &:nth-child(5) a::after {
+        content: "GitHub";
+      }
+
+      &:nth-child(6) a::after {
+        content: "Gmail";
+      }
+
+      a {
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        background-repeat: no-repeat;
         justify-content: center;
-        pointer-events: none;
-        min-width: 75px;
-        display: flex;
-        width: 5vw;
-        padding: 0;
-        margin: 0;
+        align-items: center;
 
-        a {
-          font-size: 16px;
-          justify-items: center;
-          text-decoration: none;
-          pointer-events: auto;
-          width: fit-content;
-          color: white;
-          display: grid;
+        position: relative;
+        display: block;
+        height: 60px;
+        width: 60px;
 
-          &:hover {
-            & img {
-              transition: transform 0.25s ease;
-              transform: translateY(-15px);
-            }
+        text-align: center;
+        background: #333;
+        font-size: 30px;
+        color: #666;
 
-            & span {
-              text-shadow: 0px 0px 4px #ffffff, 1px -2px 5px rgba(255, 255, 255, 0.2);
-              transition: text-shadow 0.25s ease;
-            }
-          }
+        border-radius: 5px;
+        transition: 500ms;
 
-          span {
-            transition: text-shadow 0.5s ease;
-          }
-
-          img {
-            transition: transform 0.5s ease;
-            filter: invert(100%);
-            min-width: 40px;
-            color: white;
-            width: 2.5vw;
-          }
+        i {
+          transform: translateY(25%);
         }
 
-        &:nth-child(3) a img {
-          padding: 0.15vw;
+        &::after,
+        &::before {
+          transition: 250ms ease;
+          position: absolute;
+          content: "";
+          left: 0;
+          top: 0;
+
+          width: 100%;
+        }
+
+        &::after {
+          transform: translateY(-75%);
+          white-space: nowrap;
+          content: "";
+
+          justify-content: center;
+          pointer-events: none;
+          user-select: none;
+          display: flex;
+
+          font-family: Saira-Medium;
+          font-size: 16px;
+          opacity: 0;
+        }
+
+        &::before {
+          background: lighten(#077e46, 20%);
+          transform: scale(0.9);
+          border-radius: 5px;
+          height: 100%;
+          z-index: -1;
+        }
+
+        &:hover {
+          text-shadow: 0 0 3px lighten(#077e46, 20%);
+          color: lighten(#077e46, 20%);
+
+          &::after {
+            text-shadow: none;
+            transform: translateY(-150%);
+            color: #777;
+            opacity: 1;
+          }
+
+          &::before {
+            box-shadow: 0 0 15px lighten(#077e46, 20%);
+            transform: scale(1.05);
+          }
         }
       }
     }
+  }
 }

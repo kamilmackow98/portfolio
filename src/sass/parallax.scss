@@ -1,13 +1,78 @@
-// container
+#parallax__container {
+  position: relative;
+  overflow: hidden;
+  // display: block;
+  height: 800px;
+
+  background-color: $third;
+  color: white;
+
+  .layer {
+    position: absolute;
+
+    // transform-style: preserve-3d;
+    // perspective: 1000px;
+
+    // height: 800px;
+
+    font-size: calc(16px + 1vw);
+
+    left: 5%;
+    top: 100px;
+  }
+
+  #layer-0 {
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100%;
+
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../images/1234.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  #layer-1 {
+    position: absolute;
+  }
+
+  .typed-cursor {
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .typewriter {
+    font-family: "Courier New", Courier, monospace;
+    white-space: pre-wrap;
+
+    .name,
+    .age,
+    .location,
+    .prop {
+      color: #077e46;
+
+      &::selection {
+        background-color: rgba($fourth, 0.99);
+        color: white;
+      }
+    }
+
+    &::selection {
+      background-color: rgba($fourth, 0.99);
+      color: $secondary;
+    }
+  }
+}
+
+/*
 #parallaxContainer {
   position: relative;
-  max-height: 1120px;
+  max-height: 600px;
   min-height: 600px;
   overflow: hidden;
   display: block;
-  height: 100vh;
-  
-  display: none;
+  height: 600px;
 }
 
 // for each layer with images
@@ -17,7 +82,7 @@
   background-size: 100%; // on mobile remove background-size
   min-height: 600px;
   position: fixed;
-  height: 100vh;
+  height: 600px;
   width: 100%;
 }
 
@@ -103,3 +168,4 @@
     opacity: 0;
   }
 }
+*/
