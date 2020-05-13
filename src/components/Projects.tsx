@@ -3,13 +3,18 @@ import "flickity/dist/flickity.min.css";
 import Flickity from "flickity";
 import React from "react";
 
+export interface ProjectsProps {
+  title: string;
+  progLang: string[];
+  description: string;
+  link?: string;
+  code?: string;
+  date: string;
+}
+
 const Projects = () => {
-  /* 
-    for each object in ProjectsCollection - return a component (div)
-    join() separates array elements with ", "
-    split() converts the string into an array
-    each element will be separated by " ," 
-    */
+  // for each object in ProjectsCollection - return a component (div)
+  // join() separates array element with " - "
 
   // ref for flickity so it can be used in useEffect hook
   let flickity = React.useRef() as React.MutableRefObject<React.ReactNode>;
@@ -20,7 +25,6 @@ const Projects = () => {
       percentPosition: true,
       dragThreshold: 25,
       pageDots: false,
-      // contain: true
     });
 
     let projectsItem = document.getElementsByClassName("projects__item");
@@ -48,7 +52,6 @@ const Projects = () => {
       mutationObserver.observe(projectsItem[i], { attributes: true, attributeFilter: ["aria-hidden"] });
     }
 
-    // for each card
     for (let i = 0; i < cards.length; i++) {
       // two buttons in each card
       let buttons = cards[i].getElementsByClassName("cardButton");
@@ -106,7 +109,7 @@ const Projects = () => {
               <div className="projectsContent back">
                 <div className="project__wrap">
                   <div>About</div>
-                  <hr/>
+                  <hr />
                   <div className="project__desc">{project.description}</div>
                   <hr />
                   {project.link ? (
@@ -158,14 +161,5 @@ const Projects = () => {
     </>
   );
 };
-
-export interface ProjectsProps {
-  title: string;
-  progLang: string[];
-  description: string;
-  link?: string;
-  code?: string;
-  date: string;
-}
 
 export default Projects;

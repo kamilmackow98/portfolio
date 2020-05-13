@@ -24,7 +24,7 @@ ul {
   width: 100%;
   z-index: 1;
 
-  clip-path: polygon(25% 1.5%, 100% 0%, 100% 100%, 0 100%, 0 0%);
+  clip-path: polygon(50% 1.5%, 100% 0%, 100% 100%, 0 100%, 0 0%);
   margin-top: -100px;
   padding-top: 200px;
 
@@ -45,8 +45,4 @@ section {
   text-align: center;
   color: white;
   width: 100%;
-
-  // min-height: $minWindowHeigh;
-  // flex-direction: column;
-  // display: flex;
 }

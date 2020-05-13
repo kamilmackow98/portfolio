@@ -1,40 +1,84 @@
 #parallax__container {
   position: relative;
   overflow: hidden;
-  // display: block;
-  height: 800px;
+  height: 1000px;
 
-  background-color: $third;
+  background-color: $secondary;
   color: white;
 
-  .layer {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+
+  &::before {
     position: absolute;
-
-    // transform-style: preserve-3d;
-    // perspective: 1000px;
-
-    // height: 800px;
-
-    font-size: calc(16px + 1vw);
-
-    left: 5%;
-    top: 100px;
-  }
-
-  #layer-0 {
-    width: 100%;
+    content: "";
+    bottom: 0;
+    left: 25%;
     top: 0;
-    left: 0;
-    height: 100%;
 
-    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../images/1234.jpg");
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    transform: translate3d(-50%, 0, 0);
+    background-color: $third;
+    width: 3px;
   }
 
-  #layer-1 {
+  .layer {
+    font-size: calc(16px + 1vw);
     position: absolute;
+    font-weight: bold;
+  }
+
+  // paper img
+  #layer-0 {
+    background-image: url("../images/paper.png");
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    height: 90%;
+    width: 100%;
+    right: 5%;
+    top: 0;
+  }
+
+  // typewriter
+  #layer-1 {
+    left: 5%;
+    top: 10%;
+  }
+
+  // button
+  #layer-2 {
+    // display: none;
+    display: flex;
+    left: 15%;
+    // border: 1px solid red;
+    bottom: 300px;
+    // bottom: 20%;
+    width: 20%;
+
+    .parallax-btn {
+      background-color: $secondary;
+      padding: 15px;
+      color: white;
+      width: 100%;
+
+      font-family: Saira-Medium;
+      font-size: 16px;
+      cursor: pointer;
+
+      border: 3px solid $third;
+
+      transition: all 250ms ease;
+
+      &:hover {
+        border: 3px solid white;
+      }
+
+      &:focus {
+        border: 3px solid white;
+      }
+    }
   }
 
   .typed-cursor {
@@ -50,6 +94,7 @@
     .age,
     .location,
     .prop {
+      text-shadow: 0 -2px 1px $secondary, 0 2px 1px $secondary, 2px 0 1px $secondary, -2px 0 1px $secondary;
       color: #077e46;
 
       &::selection {
@@ -64,108 +109,3 @@
     }
   }
 }
-
-/*
-#parallaxContainer {
-  position: relative;
-  max-height: 600px;
-  min-height: 600px;
-  overflow: hidden;
-  display: block;
-  height: 600px;
-}
-
-// for each layer with images
-.layer {
-  background-position: top center;
-  background-repeat: no-repeat;
-  background-size: 100%; // on mobile remove background-size
-  min-height: 600px;
-  position: fixed;
-  height: 600px;
-  width: 100%;
-}
-
-#layer-0 {
-  background-image: url("../images/parallax/background.png");
-}
-
-#layer-1 {
-  background-image: url("../images/parallax/05.png");
-}
-
-#layer-2 {
-  background-image: url("../images/parallax/04.png");
-}
-
-#layer-3 {
-  background-image: url("../images/parallax/03.png");
-}
-
-#layer-4 {
-  background-image: url("../images/parallax/02.png");
-}
-
-#layer-5 {
-  background-image: url("../images/parallax/01.png");
-}
-
-#layer-6 {
-  background-image: url("../images/parallax/spiderman.png");
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-// arrow pointing down - scroll link to about section
-.layer:nth-child(7) > div > div {
-  text-shadow: 0px 0px 2px #ffffff, 1px -2px 10px rgba(255, 255, 255, 0.5);
-  position: relative;
-  cursor: default;
-  font-size: 2em;
-  top: 90vh;
-
-  & > span {
-    -webkit-animation: arrowLink 1.5s infinite;
-    animation: arrowLink 1.5s infinite;
-    -webkit-transform: rotate(-45deg);
-    border-bottom: 3px solid #fff;
-    border-left: 3px solid #fff;
-    transform: rotate(-45deg);
-    margin-left: -15px;
-    position: absolute;
-    cursor: pointer;
-    height: 30px;
-    width: 30px;
-    left: 50%;
-    top: -65px;
-  }
-}
-
-@keyframes arrowLink {
-  0% {
-    transform: rotate(-45deg) translate(0, 0);
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    transform: rotate(-45deg) translate(-20px, 20px);
-    opacity: 0;
-  }
-}
-
-@-webkit-keyframes arrowLink {
-  0% {
-    -webkit-transform: rotate(-45deg) translate(0, 0);
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: rotate(-45deg) translate(-20px, 20px);
-    opacity: 0;
-  }
-}
-*/

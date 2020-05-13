@@ -135,15 +135,24 @@ export let ProjectsCollection: ProjectsProps[] = [
   {
     title: "CCV Web APP",
     description:
-      "Une application web qui permet de se prendre en photo et s'enregistrer par les vendeurs et les clients de boutiques CCV",
-    progLang: ["JavaScript", "PHP", "XAMPP", "FFmpeg"],
+      "A web app that allows customers and sellers of the CCV store to take a photo or to record a short video of themselves. Then the user can send it by email or share it on social media like Facebook, Instagram or YouTube.",
+    progLang: ["JavaScript", "PHP", "PHPMailer", "Facebook API", "Instagram API", "XAMPP", "FFmpeg"],
     date: "06 - 2019",
   },
   {
     title: "WordPress plugin",
-    description: "Modification of WordPress plugin AmeliaBooking for iFonAssist website.",
+    description:
+      "Modification of an existing WordPress plugin called AmeliaBooking. Main goal was to provide the option to book an appointment for any given product chosen by the user. My part was to add some features to the plugin, improve confirmation message sent to the user and redesign the look on the page but also to link it to the WooCommerce plugin and products available on the website.",
     progLang: ["JavaScript", "PHP", "WordPress"],
+    link: "https://www.ifonassist.com/prise-de-rendez-vous-reparation-ifonassist/",
     date: "05 - 2019",
+  },
+  {
+    title: "EcoLogTrans",
+    description: "Small brochure website for my cousin and his transport company with some basic features such as Google Maps or contact forms.",
+    progLang: ["JavaScript", "PHP", "SCSS"],
+    link: "https://drive.google.com/file/d/1DVW92U9QnwIxkC6MBnJ72t1xi5MOAk6n/view?usp=sharing",
+    date: "In Progress",
   },
 ];
 

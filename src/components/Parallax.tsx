@@ -24,17 +24,18 @@ const Parallax = () => {
     new Typed(".typewriter", options);
 
     // parallax magic
-    function parallax(this: Window) {
+    function parallax() {
+      let top = window.pageYOffset; // store the value of pixels that the document has already been scrolled vertically
+
       let layers = document.getElementsByClassName("layer"); // select all the layers and store them into "layers"
-      let top = this.pageYOffset; // store the value of pixels that the document has already been scrolled vertically
       let layer, depth: any, yPos;
 
       // loop for each layer
       for (let i = 0; i < layers.length; i++) {
         layer = layers[i];
         depth = layer.getAttribute("data-depth");
-        yPos = -(top * depth);
-        layer.setAttribute("style", `transform: translateY(${yPos}px)`);
+        yPos = -((top * depth) / 100);
+        layer.setAttribute("style", `transform: translate3d(0, ${yPos}px, 0)`);
       }
     }
 
@@ -45,23 +46,28 @@ const Parallax = () => {
     };
   }, []);
 
+  const handleClick = () => {
+    const work = document.getElementById("projectsContainer") as HTMLElement;
+    const top = work.getBoundingClientRect().top + window.scrollY;
+
+    window.scroll({ top: top, behavior: "smooth" });
+  };
+
   return (
     // 0 0.10 0.20 0.40. 0.60 1.00
     // last 0 0.10 0.25 0.40 0.60 0.90
     <div id="parallax__container">
-      <div className="layer" data-depth="-0.10" id="layer-0">
-        <span></span>
-      </div>
+      <div className="layer" data-depth="-50" id="layer-0"></div>
 
-      <div className="layer" data-depth="0.40" id="layer-1">
+      <div className="layer" data-depth="20" id="layer-1">
         <span className="typewriter"></span>
       </div>
-      {/* <div className="layer" data-depth="0.10" id="layer-1"></div>
-      <div className="layer" data-depth="0.25" id="layer-2"></div>
-      <div className="layer" data-depth="0.40" id="layer-3"></div>
-      <div className="layer" data-depth="0.60" id="layer-4"></div>
-      <div className="layer" data-depth="0.90" id="layer-5"></div>
-      <div className="layer" data-depth="-0.3" id="layer-6"></div> */}
+
+      <div className="layer" data-depth="20" id="layer-2">
+        <button className="parallax-btn" onClick={handleClick}>
+          My Work
+        </button>
+      </div>
     </div>
   );
 };
