@@ -30,7 +30,7 @@ const Skills = (props: SkillsProps) => {
   // display each skill, software, tool as a list item in ul element
   return (
     <div className="skills__container">
-      <div className="bgText">
+      <div className="skills__bgText">
         <span>S</span>
         <span>k</span>
         <span>i</span>
@@ -41,24 +41,21 @@ const Skills = (props: SkillsProps) => {
       <div className="skills__item">
         <div className="skills__content">
           <h3>Great</h3>
-          <ul>{great}</ul>
-          <span className="shadow"></span>
+          <ul className="skills__ul">{great}</ul>
         </div>
       </div>
 
       <div className="skills__item">
         <div className="skills__content">
           <h3>Good</h3>
-          <ul>{good}</ul>
-          <span className="shadow"></span>
+          <ul className="skills__ul">{good}</ul>
         </div>
       </div>
 
       <div className="skills__item">
         <div className="skills__content">
           <h3>Ok</h3>
-          <ul>{ok}</ul>
-          <span className="shadow"></span>
+          <ul className="skills__ul">{ok}</ul>
         </div>
       </div>
     </div>
