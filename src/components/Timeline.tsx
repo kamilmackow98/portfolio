@@ -56,7 +56,10 @@ const Timeline = () => {
       <div className="timeline__item">
         <div className="content">
           <div className="year">Now</div>
-          <div className="title">Your company? An interesting project?</div>
+          <div className="title">
+            <span className="companyTxt">Your company?</span>
+            <span className="companyTxt"> An interesting project?</span>
+          </div>
           <div className="type">
             <span className="timeline-txt"></span>
           </div>
