@@ -12,6 +12,7 @@
 }
 
 .skills__bgText {
+  justify-content: center;
   position: absolute;
   display: flex;
 
@@ -23,7 +24,8 @@
   user-select: none;
 
   font-size: 128px;
-  left: 5%;
+  width: 100%;
+  left: 0%;
 
   z-index: 1;
 
@@ -73,7 +75,6 @@
   height: 100%;
   width: 85%;
 
-  max-width: 350px;
   min-width: 250px;
   padding: 40px 0;
 
@@ -134,12 +135,12 @@
 @media (min-width: 481px) {
   .skills__bgText {
     font-size: 148px;
+    width: auto;
     left: 7.5%;
   }
 
   .skills__content {
-    max-width: 450px;
-    width: 350px;
+    width: 400px;
   }
 }
 

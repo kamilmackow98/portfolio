@@ -34,7 +34,7 @@ const About = () => {
 
       <div className="about__content">
         <div className="about__item slideshow">
-          <p className="title">Hello</p>
+          <p className="hello-title">Hello</p>
 
           <ul className="list">
             <li>User!</li>
