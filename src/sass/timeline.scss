@@ -185,10 +185,34 @@
 
 @media (min-width: 1281px) {
   .timeline__item {
-    width: 50%;
+    width: 650px;
   }
 
   .companyTxt {
     display: inline;
+  }
+}
+
+@media (min-width: 1367px) {
+  .timeline__item {
+    width: 695px;
+  }
+}
+
+@media (min-width: 1441px) {
+  .timeline__item {
+    width: 725px;
+  }
+}
+
+@media (min-width: 1681px) {
+  .timeline__item {
+    width: 845px;
+  }
+}
+
+@media (min-width: 1769px) {
+  .timeline__item {
+    width: 885px;
   }
 }

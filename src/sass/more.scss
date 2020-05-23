@@ -14,11 +14,13 @@
   }
 
   ul {
-    display: flex;
-    width: auto;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 50px;
+    row-gap: 50px;
+    display: grid;
 
     li {
-      margin: 0 15px;
+      // margin: 0 15px;
 
       &:nth-child(1) a::after {
         content: "My CV";
@@ -119,6 +121,21 @@
             transform: scale(1.05);
           }
         }
+      }
+    }
+  }
+}
+
+@media (min-width: 641px) {
+  .more__container {
+    ul {
+      column-gap: 0px;
+      row-gap: 0px;
+
+      display: flex;
+
+      li {
+        margin: 0 20px;
       }
     }
   }

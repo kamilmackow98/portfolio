@@ -1,4 +1,5 @@
 .skills__container {
+  justify-content: center;
   flex-direction: column;
   position: relative;
   display: flex;
@@ -55,7 +56,6 @@
   justify-content: center;
   align-items: center;
   display: flex;
-  width: 100%;
 
   margin-bottom: 50px;
 
@@ -205,14 +205,16 @@
 
   .skills__item {
     margin-bottom: 0px;
+
+    // middle skill item (Good)
+    &:nth-child(3) {
+      margin: 0 40px;
+    }
   }
 
   .skills__content {
     padding: 60px 0;
-
-    min-width: 380px;
-    max-width: 510px;
-    width: 85%;
+    width: 380px;
 
     h3 {
       margin-bottom: 45px;
@@ -222,6 +224,32 @@
   .skills__ul {
     li {
       min-width: 200px;
+    }
+  }
+}
+
+@media (min-width: 1367px) {
+  .skills__content {
+    width: 410px;
+  }
+}
+
+@media (min-width: 1441px) {
+  .skills__content {
+    width: 430px;
+  }
+}
+
+@media (min-width: 1681px) {
+  .skills__content {
+    width: 510px;
+  }
+}
+
+@media (min-width: 1769px) {
+  .skills__item {
+    &:nth-child(3) {
+      margin: 0 80px;
     }
   }
 }
