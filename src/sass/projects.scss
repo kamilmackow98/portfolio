@@ -36,7 +36,19 @@
   }
 }
 
-// buttons for flickity
+.projects__item {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+
+  perspective: 1000px;
+  width: 100%;
+}
+
+/* ------------------------------------------ */
+/* ---------------| FLICKITY |--------------- */
+/* ------------------------------------------ */
+
 .flickity-button {
   color: rgba(255, 255, 255, 0.25);
   transition: all 250ms ease;
@@ -59,18 +71,11 @@
   }
 }
 
-/* each project container */
-.projects__item {
-  justify-content: center;
-  align-items: center;
-  display: flex;
+/* -------------------------------------- */
+/* ---------------| CARD |--------------- */
+/* -------------------------------------- */
 
-  perspective: 1000px;
-  width: 100%;
-}
-
-/* each card with content */
-.cardContainer {
+.card-container {
   pointer-events: auto !important;
   -moz-transition: transform 1s;
   transform-style: preserve-3d;
@@ -89,23 +94,22 @@
 
   z-index: 10;
 
-  // cardContainer's class on btn click
   &.isFlipped {
     transform: rotateY(180deg);
 
-    .animSpan {
+    .anim-span {
       transition: all 250ms ease;
       transition-delay: 500ms;
     }
 
-    .animSpan1,
-    .animSpan3 {
+    .anim-span1,
+    .anim-span3 {
       transform: translateX(0%) scaleX(1);
       transition-delay: 800ms;
     }
 
-    .animSpan2,
-    .animSpan4 {
+    .anim-span2,
+    .anim-span4 {
       transform: translateY(0%) scaleX(1);
     }
 
@@ -117,7 +121,7 @@
   }
 }
 
-// content of front and back cards
+// card front & back
 .card {
   box-shadow: inset 0 0 15px 2px rgba(0, 0, 0, 0.5);
   border: 4px solid rgba(0, 0, 0, 0.2);
@@ -128,15 +132,15 @@
   height: 100%;
   width: 100%;
 
-  &.cardBack {
+  &.card__back {
     transform: rotateY(180deg);
 
-    .skewedBorder {
+    .skewed-border {
       transform: skew(20deg, -20deg) translateZ(-2.5vw) scale(0.9);
     }
   }
 
-  /* dark background on hover */
+  // dark background on click
   &::before {
     transition: transform 300ms ease;
     background: $secondary;
@@ -149,128 +153,13 @@
     left: 0;
     top: 0;
   }
-
-  .animSpan {
-    transition: all 250ms ease;
-    transition-delay: 250ms;
-
-    background-color: white;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-  }
-
-  .animSpan1,
-  .animSpan3 {
-    height: 2px;
-  }
-
-  .animSpan2,
-  .animSpan4 {
-    width: 2px;
-  }
-
-  .animSpan1 {
-    transform: translateX(-75%) scaleX(0);
-    left: 0;
-    top: 0;
-  }
-
-  .animSpan2 {
-    transform: translateY(75%) scaleY(0);
-    left: 0;
-    top: 0;
-  }
-
-  .animSpan3 {
-    transform: translateX(75%) scaleX(0);
-    bottom: 0;
-    left: 0;
-  }
-
-  .animSpan4 {
-    transform: translateY(-75%) scaleY(0);
-    right: 0;
-    top: 0;
-  }
-
-  /* borders inside front and back card */
-  .borderSpan {
-    transform: translateZ(5vw) scale(0.815);
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    bottom: 0;
-    right: 0;
-  }
-
-  .span1 {
-    border: 2px solid white;
-    border-bottom: none;
-  }
-
-  .span2,
-  .span3 {
-    border-bottom: 2px solid white;
-    width: 32.5%;
-  }
-
-  .span2 {
-    left: 6.3%;
-  }
-
-  .span3 {
-    right: 6.3%;
-  }
-
-  /* corner borders inside */
-  .edge {
-    border: 2px solid white;
-    position: absolute;
-    height: 20px;
-    width: 20px;
-  }
-
-  .edge1,
-  .edge3 {
-    border-right: none;
-    left: 0;
-  }
-
-  .edge1,
-  .edge4 {
-    border-top: none;
-    bottom: 0;
-  }
-
-  .edge2,
-  .edge3 {
-    border-bottom: none;
-    top: 0;
-  }
-
-  .edge2,
-  .edge4 {
-    border-left: none;
-    right: 0;
-  }
-
-  /* skewed border behind card */
-  .skewedBorder {
-    transform: skew(-20deg, 20deg) translateZ(-2.5vw) scale(0.9);
-    backface-visibility: hidden;
-    border: 2px solid white;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    content: "";
-    left: 0;
-    top: 0;
-  }
 }
 
-/* content with title, description etc. */
-.projectsContent {
+/* ----------------------------------------- */
+/* ---------------| CONTENT |--------------- */
+/* ----------------------------------------- */
+
+.projects__content {
   -webkit-font-smoothing: subpixel-antialiased;
   transform: translateZ(10vw) scale(0.8);
   // perspective: inherit !important;
@@ -283,69 +172,6 @@
 
   font-size: 16px;
 
-  .projectsTitle {
-    font-size: 28px;
-    align-self: end;
-    width: 80%;
-  }
-
-  .techUsed {
-    padding: 0 10%;
-    height: 50%;
-    width: 80%;
-
-    div {
-      margin-bottom: 20px;
-    }
-  }
-
-  .project__wrap {
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    display: flex;
-
-    align-self: flex-end;
-
-    height: 90%;
-    width: 80%;
-
-    .project__desc {
-      word-spacing: 1px;
-      padding: 0 5px;
-    }
-
-    hr {
-      width: 50%;
-      margin: 20px 0;
-    }
-  }
-
-  .project__link,
-  .project__code {
-    padding: 5px 10px;
-    color: white;
-  }
-
-  a.project__link,
-  a.project__code {
-    border: 2px solid rgba(0, 0, 0, 0);
-    transition: border 250ms ease;
-
-    text-decoration: none;
-    margin-bottom: 10px;
-
-    &:hover {
-      border: 2px solid white;
-    }
-
-    &:visited {
-      color: white;
-      outline: none;
-    }
-  }
-
-  /* content of front side */
   &.face {
     grid-template-rows: 0.5fr 0.75fr 10% 10%;
   }
@@ -355,99 +181,248 @@
   }
 }
 
-/* date at the bottom of the card */
-.projectsDate {
-  padding-right: 10px;
-  padding-left: 10px;
+.projects__wrap {
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+
+  align-self: flex-end;
+
+  height: 90%;
+  width: 80%;
+
+  hr {
+    width: 50%;
+    margin: 20px 0;
+  }
+}
+
+.projects__title {
+  font-size: 28px;
+  align-self: end;
+  width: 80%;
+}
+
+.projects__tech {
+  padding: 0 10%;
+  height: 50%;
+  width: 80%;
+
+  div {
+    margin-bottom: 20px;
+  }
+}
+
+.projects__date {
   font-size: 16px;
 }
 
-// button "Read More" OR "Go Back"
-.cardButton {
+.projects__desc {
+  padding: 0 20px;
+}
+
+.projects__link,
+.projects__code {
+  font-family: Saira-Medium;
+  padding: 5px 10px;
+  color: white;
+}
+
+.projects__link,
+.projects__code {
+  border: 2px solid rgba(0, 0, 0, 0);
+  transition: border 250ms ease;
+
+  text-decoration: none;
+  margin-bottom: 10px;
+
+  &:hover {
+    border: 2px solid white;
+  }
+
+  &:visited {
+    color: white;
+    outline: none;
+  }
+}
+
+/* ---------------------------------------- */
+/* ---------------| BUTTON |--------------- */
+/* ---------------------------------------- */
+
+.card-button {
   position: relative;
   background: none;
-  cursor: pointer;
   color: white;
   border: none;
 
   overflow: hidden;
 
-  padding: 10px 20px;
-  font-size: 18px;
-
   &:hover {
-    .btnSpan1,
-    .btnSpan3 {
-      transform: translateX(0);
-    }
-
-    .btnSpan2,
-    .btnSpan4 {
-      transform: translateX(0);
+    .btn-span1,
+    .btn-span2,
+    .btn-span3,
+    .btn-span4 {
+      transform: translate3d(0px, 0px, 0px);
     }
   }
 
-  /* animated border around the buttons */
-  .btnSpan {
+  // animated borders around the button
+  .btn-span {
     transition: all 250ms ease;
     background: white;
     position: absolute;
   }
 
-  .btnSpan1,
-  .btnSpan3 {
+  .btn-span1 {
+    transform: translate3d(-110%, 0px, 0px);
+  }
+
+  .btn-span3 {
+    transform: translate3d(110%, 0px, 0px);
+  }
+
+  .btn-span2 {
+    transform: translate3d(0px, -110%, 0px);
+  }
+
+  .btn-span4 {
+    transform: translate3d(0px, 110%, 0px);
+  }
+
+  .btn-span1,
+  .btn-span3 {
     transition-delay: 300ms;
     height: 2px;
     width: 100%;
   }
 
-  .btnSpan1 {
-    transform: translateX(-110%);
-  }
-
-  .btnSpan3 {
-    transform: translateX(110%);
-  }
-
-  .btnSpan2 {
-    transform: translateY(-110%);
-  }
-
-  .btnSpan4 {
-    transform: translateY(110%);
-  }
-
-  .btnSpan2,
-  .btnSpan4 {
-    width: 2px;
+  .btn-span2,
+  .btn-span4 {
     height: 100%;
+    width: 2px;
   }
 
-  .btnSpan1,
-  .btnSpan2 {
+  .btn-span1,
+  .btn-span2 {
     top: 0;
   }
 
-  .btnSpan1,
-  .btnSpan4 {
+  .btn-span1,
+  .btn-span4 {
     left: 0;
   }
 
-  .btnSpan2,
-  .btnSpan3 {
+  .btn-span2,
+  .btn-span3 {
     right: 0;
   }
 
-  .btnSpan3,
-  .btnSpan4 {
+  .btn-span3,
+  .btn-span4 {
     bottom: 0;
   }
 }
 
-@media (min-width: 1281px) {
+/* ------------------------------------------------ */
+/* ---------------| WHITE BORDERDS |--------------- */
+/* ------------------------------------------------ */
+
+/* borders inside front and back card */
+.border-span {
+  transform: translateZ(5vw) scale(0.815);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  bottom: 0;
+  right: 0;
 }
 
-// background txt float animation
+.border-span1 {
+  border: 2px solid white;
+  border-bottom: none;
+}
+
+.border-span2,
+.border-span3 {
+  border-bottom: 2px solid white;
+  width: 32.5%;
+}
+
+.border-span2 {
+  left: 6.3%;
+}
+
+.border-span3 {
+  right: 6.3%;
+}
+
+// skewed border behind each side of card
+.skewed-border {
+  transform: skew(-20deg, 20deg) translateZ(-2.5vw) scale(0.9);
+  backface-visibility: hidden;
+  border: 2px solid white;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  content: "";
+  left: 0;
+  top: 0;
+}
+
+/* ---------------------------------------------------------- */
+/* ---------------| ANIMATED BORDERS ON BACK |--------------- */
+/* ---------------------------------------------------------- */
+
+.anim-span {
+  transition: all 250ms ease;
+  transition-delay: 250ms;
+
+  background-color: white;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.anim-span1,
+.anim-span3 {
+  height: 2px;
+}
+
+.anim-span2,
+.anim-span4 {
+  width: 2px;
+}
+
+.anim-span1 {
+  transform: translateX(-75%) scaleX(0);
+  left: 0;
+  top: 0;
+}
+
+.anim-span2 {
+  transform: translateY(75%) scaleY(0);
+  left: 0;
+  top: 0;
+}
+
+.anim-span3 {
+  transform: translateX(75%) scaleX(0);
+  bottom: 0;
+  left: 0;
+}
+
+.anim-span4 {
+  transform: translateY(-75%) scaleY(0);
+  right: 0;
+  top: 0;
+}
+
+/* --------------------------- */
+/* -------| ANIMATION |------- */
+/* --------------------------- */
+
 @keyframes floating {
   100% {
     transform: translate3d(0px, 75px, 0);

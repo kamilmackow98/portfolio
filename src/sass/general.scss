@@ -43,6 +43,15 @@ body,
   overflow: hidden;
 }
 
+button {
+  background-color: transparent;
+  font-family: Saira-Medium;
+  font-size: 16px;
+
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
 /* width */
 ::-webkit-scrollbar {
   width: 5px;

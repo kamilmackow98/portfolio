@@ -126,11 +126,18 @@ export let ProjectsCollection: ProjectsProps[] = [
   {
     title: "Music Player",
     description:
-      "A music player inspired by CaTRoX theme for Foobar2000. Designed mainly to play several songs from different albums. User can drag, open or add audio files which will then be added to the main playlist. Thanks to JS Media Tags, the album cover for each song can be displayed with other song information. User can also search for the lyrics of the current song thanks to the Happi API.",
+      "A music player inspired by CaTRoX theme for Foobar2000. Designed mainly to play several songs from different albums. User can drag, open or add audio files which will then be added to the main playlist. Thanks to JS Media Tags, the album cover for each song can be displayed along with other song information. User can also search for the lyrics of the current song thanks to the Happi API.",
     progLang: ["Scss", "ReactJS", "TypeScript", "JS MediaTags", "Happi API"],
     link: "https://kamilmackow98.github.io/player/",
     code: "https://github.com/kamilmackow98/player/tree/master",
     date: "04 - 2020",
+  },
+  {
+    title: "EcoLogTrans",
+    description: "Small brochure website for my cousin and his transport company with some basic features such as Google Maps or contact forms.",
+    progLang: ["JavaScript", "PHP", "PHPMailer", "SCSS"],
+    link: "https://www.ecologtrans.pl",
+    date: "05 - 2020",
   },
   {
     title: "CCV Web APP",
@@ -146,13 +153,6 @@ export let ProjectsCollection: ProjectsProps[] = [
     progLang: ["JavaScript", "PHP", "WordPress"],
     link: "https://www.ifonassist.com/prise-de-rendez-vous-reparation-ifonassist/",
     date: "05 - 2019",
-  },
-  {
-    title: "EcoLogTrans",
-    description: "Small brochure website for my cousin and his transport company with some basic features such as Google Maps or contact forms.",
-    progLang: ["JavaScript", "PHP", "SCSS"],
-    link: "https://drive.google.com/file/d/1DVW92U9QnwIxkC6MBnJ72t1xi5MOAk6n/view?usp=sharing",
-    date: "In Progress",
   },
 ];
 

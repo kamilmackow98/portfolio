@@ -22,28 +22,28 @@
     li {
       // margin: 0 15px;
 
-      &:nth-child(1) a::after {
-        content: "My CV";
-      }
-
-      &:nth-child(2) a::after {
+      &[data-link="phone"] a::after {
         content: "+33 7 82 29 80 77";
       }
 
-      &:nth-child(3) a::after {
+      &[data-link="email"] a::after {
+        content: "kamilmackow98@gmail.com";
+      }
+
+      &[data-link="CV"] a::after {
+        content: "My CV";
+      }
+
+      &[data-link="facebook"] a::after {
         content: "Facebook";
       }
 
-      &:nth-child(4) a::after {
+      &[data-link="linkedIn"] a::after {
         content: "LinkedIn";
       }
 
-      &:nth-child(5) a::after {
+      &[data-link="github"] a::after {
         content: "GitHub";
-      }
-
-      &:nth-child(6) a::after {
-        content: "Gmail";
       }
 
       a {
@@ -106,7 +106,8 @@
           z-index: -1;
         }
 
-        &:hover {
+        &:hover,
+        &:focus {
           text-shadow: 0 0 3px lighten(#077e46, 20%);
           color: lighten(#077e46, 20%);
 

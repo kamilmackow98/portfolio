@@ -1,14 +1,11 @@
 #parallax__container {
   position: relative;
   overflow: hidden;
-  height: 1000px;
+  height: 100vh;
+  min-height: 600px;
 
   background-color: $secondary;
   color: white;
-
-  display: grid;
-  align-items: center;
-  justify-items: center;
 
   &::before {
     position: absolute;
@@ -23,9 +20,9 @@
   }
 
   .layer {
-    font-size: calc(16px + 1vw);
     position: absolute;
     font-weight: bold;
+    font-size: 36px;
   }
 
   // paper img
@@ -38,7 +35,7 @@
     height: 90%;
     width: 100%;
     right: 5%;
-    top: 0;
+    top: 0px;
   }
 
   // typewriter

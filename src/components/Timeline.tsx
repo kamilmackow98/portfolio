@@ -3,7 +3,7 @@ import Typed from "typed.js";
 
 const Timeline = () => {
   React.useEffect(() => {
-    let txt = ["Let's talk about it!^1000 Give me a chance to contribute to the future of your business!"];
+    let txt = ["Contact me and let's talk about it!"];
 
     let options = {
       strings: txt,

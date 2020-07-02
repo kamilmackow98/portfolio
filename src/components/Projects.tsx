@@ -28,7 +28,7 @@ const Projects = () => {
     });
 
     let projectsItem = document.getElementsByClassName("projects__item");
-    let cards = document.getElementsByClassName("cardContainer");
+    let cards = document.getElementsByClassName("card-container");
 
     // custom event listener for changes in DOM
     const mutationObserver = new MutationObserver(function (mutationsList: any, observer: any) {
@@ -54,7 +54,7 @@ const Projects = () => {
 
     for (let i = 0; i < cards.length; i++) {
       // two buttons in each card
-      let buttons = cards[i].getElementsByClassName("cardButton");
+      let buttons = cards[i].getElementsByClassName("card-button");
 
       // for buttons in each card element add event listener and toggle class
       for (let j = 0; j < buttons.length; j++) {
@@ -66,94 +66,98 @@ const Projects = () => {
     }
   }, [flickity]);
 
+  const contactMe = () => {
+    const contactSection = document.getElementsByClassName("contact__section")[0] as HTMLElement;
+    const bottom = contactSection.getBoundingClientRect().bottom + window.scrollY;
+    const phone = document.querySelector('.contact__section li[data-link="phone"] a') as HTMLElement;
+
+    window.scroll({ top: bottom, behavior: "smooth" });
+
+    setTimeout(() => {
+      phone.focus();
+    }, 500);
+  };
+
   return (
     <>
       {ProjectsCollection.map((project, i) => (
         <div className="projects__item" key={i}>
-          <div className="cardContainer">
+          <div className="card-container">
             {/* front side of the card*/}
-            <div className="card cardFront">
-              <div className="projectsContent face">
-                <div className="projectsTitle">{project.title}</div>
+            <div className="card card__front">
+              <div className="projects__content face">
+                <div className="projects__title">{project.title}</div>
 
-                <div className="techUsed">
+                <div className="projects__tech">
                   <div>Technology used</div>
                   {project.progLang.join(" - ")}
                 </div>
 
-                <div className="cardButton frontButton">
+                <button tabIndex={0} className="card-button">
                   Read More
-                  <span className="btnSpan btnSpan1"></span>
-                  <span className="btnSpan btnSpan2"></span>
-                  <span className="btnSpan btnSpan3"></span>
-                  <span className="btnSpan btnSpan4"></span>
-                </div>
+                  <span className="btn-span btn-span1"></span>
+                  <span className="btn-span btn-span2"></span>
+                  <span className="btn-span btn-span3"></span>
+                  <span className="btn-span btn-span4"></span>
+                </button>
 
-                <div className="projectsDate">{project.date}</div>
+                <div className="projects__date">{project.date}</div>
               </div>
 
-              <span className="skewedBorder"></span>
+              <span className="border-span border-span1"></span>
+              <span className="border-span border-span2"></span>
+              <span className="border-span border-span3"></span>
 
-              <span className="borderSpan span1"></span>
-              <span className="borderSpan span2"></span>
-              <span className="borderSpan span3"></span>
-
-              <span className="edge edge1"></span>
-              <span className="edge edge2"></span>
-              <span className="edge edge3"></span>
-              <span className="edge edge4"></span>
+              <span className="skewed-border"></span>
             </div>
 
             {/* back side of the card */}
-            <div className="card cardBack">
-              <div className="projectsContent back">
-                <div className="project__wrap">
+            <div className="card card__back">
+              <div className="projects__content back">
+                <div className="projects__wrap">
                   <div>About</div>
                   <hr />
-                  <div className="project__desc">{project.description}</div>
+                  <div className="projects__desc">{project.description}</div>
                   <hr />
                   {project.link ? (
-                    <a className="project__link" href={`${project.link}`} target="_blank" rel="noopener noreferrer">
+                    <a className="projects__link" href={`${project.link}`} target="_blank" rel="noopener noreferrer">
                       Preview
                     </a>
                   ) : (
-                    <div className="project__link">No preview available</div>
+                    <div className="projects__link">No preview available</div>
                   )}
                   {project.code ? (
-                    <a className="project__code" href={`${project.code}`} target="_blank" rel="noopener noreferrer">
+                    <a className="projects__code" href={`${project.code}`} target="_blank" rel="noopener noreferrer">
                       Code
                     </a>
                   ) : (
-                    <div className="project__code">No code available</div>
+                    <button className="projects__code" onClick={contactMe}>
+                      Contact me for code
+                    </button>
                   )}
                 </div>
 
-                <div className="cardButton backButton">
+                <button tabIndex={0} className="card-button">
                   Go Back
-                  <span className="btnSpan btnSpan1"></span>
-                  <span className="btnSpan btnSpan2"></span>
-                  <span className="btnSpan btnSpan3"></span>
-                  <span className="btnSpan btnSpan4"></span>
-                </div>
+                  <span className="btn-span btn-span1"></span>
+                  <span className="btn-span btn-span2"></span>
+                  <span className="btn-span btn-span3"></span>
+                  <span className="btn-span btn-span4"></span>
+                </button>
 
-                <div className="projectsDate">{project.date}</div>
+                <div className="projects__date">{project.date}</div>
               </div>
 
-              <span className="skewedBorder"></span>
+              <span className="skewed-border"></span>
 
-              <span className="borderSpan span1"></span>
-              <span className="borderSpan span2"></span>
-              <span className="borderSpan span3"></span>
+              <span className="border-span border-span1"></span>
+              <span className="border-span border-span2"></span>
+              <span className="border-span border-span3"></span>
 
-              <span className="edge edge1"></span>
-              <span className="edge edge2"></span>
-              <span className="edge edge3"></span>
-              <span className="edge edge4"></span>
-
-              <span className="animSpan animSpan1"></span>
-              <span className="animSpan animSpan2"></span>
-              <span className="animSpan animSpan3"></span>
-              <span className="animSpan animSpan4"></span>
+              <span className="anim-span anim-span1"></span>
+              <span className="anim-span anim-span2"></span>
+              <span className="anim-span anim-span3"></span>
+              <span className="anim-span anim-span4"></span>
             </div>
           </div>
         </div>
