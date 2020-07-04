@@ -9,7 +9,6 @@ export interface ProjectsProps {
   description: string;
   link?: string;
   code?: string;
-  date: string;
 }
 
 const Projects = () => {
@@ -80,88 +79,93 @@ const Projects = () => {
 
   return (
     <>
-      {ProjectsCollection.map((project, i) => (
-        <div className="projects__item" key={i}>
-          <div className="card-container">
-            {/* front side of the card*/}
-            <div className="card card__front">
-              <div className="projects__content face">
-                <div className="projects__title">{project.title}</div>
+      <div className="projects__bgText txt1">
+        <span>P</span>
+        <span>r</span>
+        <span>o</span>
+        <span>j</span>
+        <span>e</span>
+        <span>c</span>
+        <span>t</span>
+        <span>s</span>
+      </div>
 
-                <div className="projects__tech">
-                  <div>Technology used</div>
-                  {project.progLang.join(" - ")}
+      <div className="projects__bgText txt2">
+        <span>W</span>
+        <span>o</span>
+        <span>r</span>
+        <span>k</span>
+      </div>
+
+      <div id="projectsContainer">
+        {ProjectsCollection.map((project, i) => (
+          <div className="projects__item" key={i}>
+            <div className="card-container">
+              {/* front side of the card*/}
+              <div className="card card__front">
+                <div className="projects__content face">
+                  <div className="projects__title">{project.title}</div>
+
+                  <div className="projects__tech">
+                    <div>Technology used</div>
+                    {project.progLang.join(" - ")}
+                  </div>
+
+                  <button tabIndex={0} className="card-button">
+                    Read More
+                    <span className="btn-span btn-span1"></span>
+                    <span className="btn-span btn-span2"></span>
+                    <span className="btn-span btn-span3"></span>
+                    <span className="btn-span btn-span4"></span>
+                  </button>
                 </div>
-
-                <button tabIndex={0} className="card-button">
-                  Read More
-                  <span className="btn-span btn-span1"></span>
-                  <span className="btn-span btn-span2"></span>
-                  <span className="btn-span btn-span3"></span>
-                  <span className="btn-span btn-span4"></span>
-                </button>
-
-                <div className="projects__date">{project.date}</div>
               </div>
 
-              <span className="border-span border-span1"></span>
-              <span className="border-span border-span2"></span>
-              <span className="border-span border-span3"></span>
+              {/* back side of the card */}
+              <div className="card card__back">
+                <div className="projects__content back">
+                  <div className="projects__wrap">
+                    <div>About</div>
+                    <hr />
+                    <div className="projects__desc">{project.description}</div>
+                    <hr />
+                    {project.link ? (
+                      <a className="projects__link" href={`${project.link}`} target="_blank" rel="noopener noreferrer">
+                        <i className="fas fa-search"></i>
+                      </a>
+                    ) : (
+                      <div className="projects__link">
+                        <i className="fas fa-search"></i>
+                      </div>
+                    )}
+                    {project.code ? (
+                      <a className="projects__code" href={`${project.code}`} target="_blank" rel="noopener noreferrer">
+                        <i className="fas fa-code"></i>
+                      </a>
+                    ) : (
+                      <button className="projects__code" onClick={contactMe}>
+                        <i className="fas fa-code"></i>
+                      </button>
+                    )}
+                  </div>
 
-              <span className="skewed-border"></span>
-            </div>
-
-            {/* back side of the card */}
-            <div className="card card__back">
-              <div className="projects__content back">
-                <div className="projects__wrap">
-                  <div>About</div>
-                  <hr />
-                  <div className="projects__desc">{project.description}</div>
-                  <hr />
-                  {project.link ? (
-                    <a className="projects__link" href={`${project.link}`} target="_blank" rel="noopener noreferrer">
-                      Preview
-                    </a>
-                  ) : (
-                    <div className="projects__link">No preview available</div>
-                  )}
-                  {project.code ? (
-                    <a className="projects__code" href={`${project.code}`} target="_blank" rel="noopener noreferrer">
-                      Code
-                    </a>
-                  ) : (
-                    <button className="projects__code" onClick={contactMe}>
-                      Contact me for code
-                    </button>
-                  )}
+                  <button tabIndex={0} className="card-button">
+                    Go Back
+                    <span className="btn-span btn-span1"></span>
+                    <span className="btn-span btn-span2"></span>
+                    <span className="btn-span btn-span3"></span>
+                    <span className="btn-span btn-span4"></span>
+                  </button>
                 </div>
-
-                <button tabIndex={0} className="card-button">
-                  Go Back
-                  <span className="btn-span btn-span1"></span>
-                  <span className="btn-span btn-span2"></span>
-                  <span className="btn-span btn-span3"></span>
-                  <span className="btn-span btn-span4"></span>
-                </button>
-
-                <div className="projects__date">{project.date}</div>
+                <span className="anim-span anim-span1"></span>
+                <span className="anim-span anim-span2"></span>
+                <span className="anim-span anim-span3"></span>
+                <span className="anim-span anim-span4"></span>
               </div>
-
-              <span className="skewed-border"></span>
-
-              <span className="border-span border-span1"></span>
-              <span className="border-span border-span2"></span>
-              <span className="border-span border-span3"></span>
-
-              <span className="anim-span anim-span1"></span>
-              <span className="anim-span anim-span2"></span>
-              <span className="anim-span anim-span3"></span>
-              <span className="anim-span anim-span4"></span>
             </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </>
   );
 };

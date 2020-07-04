@@ -1,39 +1,12 @@
-/* project container <section> */
-#projectsContainer {
-  -webkit-clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
-  clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
-
+#projects__section {
+  clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 95%);
   background-color: $secondary;
+}
+
+#projectsContainer {
   pointer-events: none;
   position: relative;
   width: 100%;
-
-  &::before,
-  &::after {
-    animation: floating 6s ease-in-out infinite alternate;
-    position: absolute;
-    color: #077e46;
-    z-index: -1;
-
-    font-size: calc(24px + 10vw);
-    font-family: Saira-Medium;
-  }
-
-  &::after {
-    content: "Projects";
-    left: 10%;
-    top: 15%;
-  }
-
-  &::before {
-    font-size: calc(24px + 8vw);
-    animation-duration: 5s;
-    animation-delay: 250ms;
-
-    content: "Work";
-    bottom: 20%;
-    right: 15%;
-  }
 }
 
 .projects__item {
@@ -83,14 +56,17 @@
   border-radius: 5px;
   position: relative;
 
-  min-width: 353.57px;
-  min-height: 450px;
-  margin: 12.5% 0;
-  width: 27.5vw;
-  height: 35vw;
+  // min-width: 353.57px;
+  // min-height: 450px;
+  margin: 200px 0px;
 
-  height: 700px;
-  width: 525px;
+  box-shadow: 0px 4px 4px 4px rgba(0, 0, 0, 0.1);
+
+  // width: 27.5vw;
+  // height: 35vw;
+
+  // height: 700px;
+  // width: 525px;
 
   z-index: 10;
 
@@ -198,6 +174,11 @@
   }
 }
 
+.projects__title,
+.projects__tech {
+  font-family: Saira-Medium;
+}
+
 .projects__title {
   font-size: 28px;
   align-self: end;
@@ -205,7 +186,7 @@
 }
 
 .projects__tech {
-  padding: 0 10%;
+  padding: 0 20px;
   height: 50%;
   width: 80%;
 
@@ -224,28 +205,44 @@
 
 .projects__link,
 .projects__code {
-  font-family: Saira-Medium;
-  padding: 5px 10px;
-  color: white;
-}
-
-.projects__link,
-.projects__code {
   border: 2px solid rgba(0, 0, 0, 0);
   transition: border 250ms ease;
-
+  background-color: $primary;
   text-decoration: none;
-  margin-bottom: 10px;
+
+  font-family: Saira-Medium;
+  position: absolute;
+  color: #666;
+
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  // padding: 5px 10px;
+
+  font-size: 16px;
+  line-height: 38px;
+  display: block;
 
   &:hover {
     border: 2px solid white;
   }
 
   &:visited {
-    color: white;
+    color: #666;
     outline: none;
   }
 }
+
+.projects__link {
+  top: 5px;
+  right: 50px;
+}
+
+.projects__code {
+  right: 5px;
+  top: 5px;
+}
+
 
 /* ---------------------------------------- */
 /* ---------------| BUTTON |--------------- */
@@ -270,7 +267,7 @@
 
   // animated borders around the button
   .btn-span {
-    transition: all 250ms ease;
+    transition: all 200ms ease;
     background: white;
     position: absolute;
   }
@@ -293,7 +290,7 @@
 
   .btn-span1,
   .btn-span3 {
-    transition-delay: 300ms;
+    transition-delay: 200ms;
     height: 2px;
     width: 100%;
   }
@@ -325,52 +322,6 @@
   }
 }
 
-/* ------------------------------------------------ */
-/* ---------------| WHITE BORDERDS |--------------- */
-/* ------------------------------------------------ */
-
-/* borders inside front and back card */
-.border-span {
-  transform: translateZ(5vw) scale(0.815);
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  bottom: 0;
-  right: 0;
-}
-
-.border-span1 {
-  border: 2px solid white;
-  border-bottom: none;
-}
-
-.border-span2,
-.border-span3 {
-  border-bottom: 2px solid white;
-  width: 32.5%;
-}
-
-.border-span2 {
-  left: 6.3%;
-}
-
-.border-span3 {
-  right: 6.3%;
-}
-
-// skewed border behind each side of card
-.skewed-border {
-  transform: skew(-20deg, 20deg) translateZ(-2.5vw) scale(0.9);
-  backface-visibility: hidden;
-  border: 2px solid white;
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  content: "";
-  left: 0;
-  top: 0;
-}
-
 /* ---------------------------------------------------------- */
 /* ---------------| ANIMATED BORDERS ON BACK |--------------- */
 /* ---------------------------------------------------------- */
@@ -379,7 +330,7 @@
   transition: all 250ms ease;
   transition-delay: 250ms;
 
-  background-color: white;
+  background-color: $greenTheme;
   position: absolute;
   height: 100%;
   width: 100%;
@@ -387,12 +338,12 @@
 
 .anim-span1,
 .anim-span3 {
-  height: 2px;
+  height: 4px;
 }
 
 .anim-span2,
 .anim-span4 {
-  width: 2px;
+  width: 4px;
 }
 
 .anim-span1 {
@@ -419,12 +370,9 @@
   top: 0;
 }
 
-/* --------------------------- */
-/* -------| ANIMATION |------- */
-/* --------------------------- */
-
-@keyframes floating {
-  100% {
-    transform: translate3d(0px, 75px, 0);
+@media (min-width: 1281px) {
+  .card-container {
+    height: 700px;
+    width: 525px;
   }
 }

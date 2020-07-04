@@ -24,7 +24,7 @@ const About = () => {
 
   return (
     <div className="about__container">
-      <div className="bgText">
+      <div className="about__bgText">
         <span>A</span>
         <span>b</span>
         <span>o</span>

@@ -43,6 +43,134 @@ ul {
 
 section {
   text-align: center;
+  position: relative;
   color: white;
   width: 100%;
+}
+
+.about__bgText,
+.skills__bgText,
+.projects__bgText {
+  font-family: Saira-Medium;
+  font-size: 128px;
+
+  pointer-events: none;
+  user-select: none;
+
+  position: absolute;
+  color: $greenTheme;
+  display: flex;
+
+  span {
+    animation: bounce 3s ease-in-out infinite alternate;
+    text-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+
+    &:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+    &:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+    &:nth-child(4) {
+      animation-delay: 0.6s;
+    }
+    &:nth-child(5) {
+      animation-delay: 0.8s;
+    }
+    &:nth-child(6) {
+      animation-delay: 1s;
+    }
+    &:nth-child(7) {
+      animation-delay: 1.2s;
+    }
+    &:nth-child(8) {
+      animation-delay: 1.4s;
+    }
+  }
+}
+
+.about__bgText {
+  right: 10%;
+  top: 20%;
+}
+
+.skills__bgText {
+  justify-content: center;
+  width: 100%;
+  z-index: 1;
+  left: 0%;
+  top: 0;
+}
+
+.projects__bgText {
+  &.txt1 {
+    right: 5%;
+    top: 15%;
+  }
+
+  &.txt2 {
+    bottom: 10%;
+    left: 5%;
+
+  }
+
+  span {
+    animation: bounce 3s ease-in-out infinite alternate;
+  }
+}
+
+@media (min-width: 481px) {
+  .skills__bgText {
+    width: auto;
+    left: 7.5%;
+  }
+
+  .about__bgText,
+  .skills__bgText,
+  .projects__bgText {
+    font-size: 148px;
+  }
+}
+
+@media (min-width: 641px) {
+  .skills__bgText {
+    left: 10%;
+  }
+
+  .about__bgText,
+  .skills__bgText,
+  .projects__bgText {
+    font-size: 168px;
+  }
+}
+
+@media (min-width: 961px) {
+  .skills__bgText {
+    left: 15%;
+  }
+
+  .about__bgText,
+  .skills__bgText,
+  .projects__bgText {
+    font-size: 188px;
+  }
+}
+
+@media (min-width: 1281px) {
+  .skills__bgText {
+    left: 20%;
+  }
+
+  .about__bgText,
+  .skills__bgText,
+  .projects__bgText {
+    font-size: 208px;
+  }
+}
+
+@keyframes bounce {
+  100% {
+    text-shadow: 0 40px 20px rgba(0, 0, 0, 0.1);
+    transform: translate3d(0, -30%, 0);
+  }
 }

@@ -92,7 +92,7 @@ const App = () => {
 
       <Parallax />
       <div className="contentWrap">
-        <section className="sectionContainer">
+        <section>
           <About />
         </section>
 
@@ -101,16 +101,14 @@ const App = () => {
         </section>
 
         <section>
-          {/* <h2>I consider myself...</h2> */}
-
           <Skills great={SkillsCollection.great} good={SkillsCollection.good} ok={SkillsCollection.ok} />
         </section>
 
-        <section className="sectionContainer" id="projectsContainer">
+        <section id="projects__section">
           <Projects />
         </section>
 
-        <section className="sectionContainer">
+        <section>
           <More />
         </section>
       </div>
@@ -130,21 +128,19 @@ export let ProjectsCollection: ProjectsProps[] = [
     progLang: ["Scss", "ReactJS", "TypeScript", "JS MediaTags", "Happi API"],
     link: "https://kamilmackow98.github.io/player/",
     code: "https://github.com/kamilmackow98/player/tree/master",
-    date: "04 - 2020",
   },
   {
     title: "EcoLogTrans",
-    description: "Small brochure website for my cousin and his transport company with some basic features such as Google Maps or contact forms.",
+    description:
+      "Small brochure website for my cousin and his transport company with some basic features such as Google Maps or contact forms.",
     progLang: ["JavaScript", "PHP", "PHPMailer", "SCSS"],
     link: "https://www.ecologtrans.pl",
-    date: "05 - 2020",
   },
   {
     title: "CCV Web APP",
     description:
       "A web app that allows customers and sellers of the CCV store to take a photo or to record a short video of themselves. Then the user can send it by email or share it on social media like Facebook, Instagram or YouTube.",
     progLang: ["JavaScript", "PHP", "PHPMailer", "Facebook API", "Instagram API", "XAMPP", "FFmpeg"],
-    date: "06 - 2019",
   },
   {
     title: "WordPress plugin",
@@ -152,7 +148,6 @@ export let ProjectsCollection: ProjectsProps[] = [
       "Modification of an existing WordPress plugin called AmeliaBooking. Main goal was to provide the option to book an appointment for any given product chosen by the user. My part was to add some features to the plugin, improve confirmation message sent to the user and redesign the look on the page but also to link it to the WooCommerce plugin and products available on the website.",
     progLang: ["JavaScript", "PHP", "WordPress"],
     link: "https://www.ifonassist.com/prise-de-rendez-vous-reparation-ifonassist/",
-    date: "05 - 2019",
   },
 ];
 
