@@ -24,6 +24,8 @@ ul {
   width: 100%;
   z-index: 1;
 
+  -webkit-clip-path: polygon(50% 1.5%, 100% 0%, 100% 100%, 0 100%, 0 0%);
+
   clip-path: polygon(50% 1.5%, 100% 0%, 100% 100%, 0 100%, 0 0%);
   margin-top: -100px;
   padding-top: 200px;
@@ -52,40 +54,63 @@ section {
 .skills__bgText,
 .projects__bgText {
   font-family: Saira-Medium;
+  transition: all 250ms ease;
   font-size: 128px;
 
   pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none;
 
   position: absolute;
   color: $greenTheme;
   display: flex;
 
+  // text-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+
   span {
+    -webkit-animation: bounce 3s ease-in-out infinite alternate;
     animation: bounce 3s ease-in-out infinite alternate;
     text-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+    transition: text-shadow 250ms ease;
 
     &:nth-child(2) {
+      -webkit-animation-delay: 0.2s;
       animation-delay: 0.2s;
     }
     &:nth-child(3) {
+      -webkit-animation-delay: 0.4s;
       animation-delay: 0.4s;
     }
     &:nth-child(4) {
+      -webkit-animation-delay: 0.6s;
       animation-delay: 0.6s;
     }
     &:nth-child(5) {
+      -webkit-animation-delay: 0.8s;
       animation-delay: 0.8s;
     }
     &:nth-child(6) {
+      -webkit-animation-delay: 1s;
       animation-delay: 1s;
     }
     &:nth-child(7) {
+      -webkit-animation-delay: 1.2s;
       animation-delay: 1.2s;
     }
     &:nth-child(8) {
+      -webkit-animation-delay: 1.4s;
       animation-delay: 1.4s;
     }
+  }
+
+  &.isGlowing {
+    color: lighten($greenTheme, 20%);
+    -webkit-filter: drop-shadow(0px 0px 4px lighten($greenTheme, 20%));
+    filter: drop-shadow(0px 0px 4px lighten($greenTheme, 20%));
+
+    // text-shadow: 0px 0px 4px lighten($greenTheme, 20%);
   }
 }
 
@@ -112,10 +137,27 @@ section {
     bottom: 10%;
     left: 5%;
 
-  }
+    span {
+      -webkit-animation: bounce 3s ease-in-out infinite alternate;
+      animation: bounce 3s ease-in-out infinite alternate;
 
-  span {
-    animation: bounce 3s ease-in-out infinite alternate;
+      &:nth-child(1) {
+        -webkit-animation-delay: 1.5s;
+        animation-delay: 1.5s;
+      }
+      &:nth-child(2) {
+        -webkit-animation-delay: 1.7s;
+        animation-delay: 1.7s;
+      }
+      &:nth-child(3) {
+        -webkit-animation-delay: 1.9s;
+        animation-delay: 1.9s;
+      }
+      &:nth-child(4) {
+        -webkit-animation-delay: 2.1s;
+        animation-delay: 2.1s;
+      }
+    }
   }
 }
 
@@ -168,9 +210,16 @@ section {
   }
 }
 
+@-webkit-keyframes bounce {
+  100% {
+    text-shadow: 0 40px 20px rgba(0, 0, 0, 0.1);
+    transform: translate3d(0px, -30%, 0px);
+  }
+}
+
 @keyframes bounce {
   100% {
     text-shadow: 0 40px 20px rgba(0, 0, 0, 0.1);
-    transform: translate3d(0, -30%, 0);
+    transform: translate3d(0px, -30%, 0px);
   }
 }

@@ -71,7 +71,7 @@
 
         &::after,
         &::before {
-          transition: 250ms ease;
+          transition: transform 200ms ease, opacity 200ms ease;
           position: absolute;
           content: "";
           left: 0;
@@ -113,7 +113,6 @@
 
           &::after {
             transform: translateY(-150%);
-
             opacity: 1;
           }
 
