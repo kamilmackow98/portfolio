@@ -39,10 +39,10 @@ const Parallax = () => {
       }
     }
 
-    window.addEventListener("scroll", parallax, false);
+    // window.addEventListener("scroll", parallax, false);
 
     return () => {
-      window.removeEventListener("scroll", parallax, false);
+      // window.removeEventListener("scroll", parallax, false);
     };
   }, []);
 

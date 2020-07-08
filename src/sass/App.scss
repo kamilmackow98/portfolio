@@ -25,7 +25,6 @@ ul {
   z-index: 1;
 
   -webkit-clip-path: polygon(50% 1.5%, 100% 0%, 100% 100%, 0 100%, 0 0%);
-
   clip-path: polygon(50% 1.5%, 100% 0%, 100% 100%, 0 100%, 0 0%);
   margin-top: -100px;
   padding-top: 200px;
@@ -57,17 +56,15 @@ section {
   transition: all 250ms ease;
   font-size: 128px;
 
-  pointer-events: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
+  pointer-events: none;
   user-select: none;
 
   position: absolute;
   color: $greenTheme;
   display: flex;
-
-  // text-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
 
   span {
     -webkit-animation: bounce 3s ease-in-out infinite alternate;
@@ -212,6 +209,7 @@ section {
 
 @-webkit-keyframes bounce {
   100% {
+    -moz-transform: translate3d(0px, -30%, 0px) rotate(0.02deg);
     text-shadow: 0 40px 20px rgba(0, 0, 0, 0.1);
     transform: translate3d(0px, -30%, 0px);
   }
@@ -219,6 +217,7 @@ section {
 
 @keyframes bounce {
   100% {
+    -moz-transform: translate3d(0px, -30%, 0px) rotate(0.02deg);
     text-shadow: 0 40px 20px rgba(0, 0, 0, 0.1);
     transform: translate3d(0px, -30%, 0px);
   }

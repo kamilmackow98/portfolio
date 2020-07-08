@@ -128,6 +128,7 @@ export let ProjectsCollection: ProjectsProps[] = [
     progLang: ["SCSS", "ReactJS", "TypeScript", "JS MediaTags", "Happi API"],
     link: "https://kamilmackow98.github.io/player/",
     code: "https://github.com/kamilmackow98/player/tree/master",
+    // img: Preview,
   },
   {
     title: "EcoLogTrans",

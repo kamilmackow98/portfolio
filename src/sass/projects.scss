@@ -50,6 +50,7 @@
 /* -------------------------------------- */
 
 .card-container {
+  box-shadow: 0px 4px 4px 4px rgba(0, 0, 0, 0.1);
   pointer-events: auto !important;
   -moz-transition: transform 1s;
   transform-style: preserve-3d;
@@ -57,16 +58,11 @@
   border-radius: 5px;
   position: relative;
 
-  // min-width: 353.57px;
-  // min-height: 450px;
   height: 600px;
   width: 80%;
 
   max-width: 500px;
-
   margin: 200px 0px;
-
-  box-shadow: 0px 4px 4px 4px rgba(0, 0, 0, 0.1);
 
   // width: 27.5vw;
   // height: 35vw;
@@ -77,6 +73,7 @@
   // z-index: 10;
 
   &.isFlipped {
+    -moz-transform: rotateY(180deg);
     transform: rotateY(180deg);
 
     .anim-span {
@@ -86,17 +83,20 @@
 
     .anim-span1,
     .anim-span3 {
+      -moz-transform: translateX(0%) scaleX(1) rotate(0.02deg);
       transform: translateX(0%) scaleX(1);
       transition-delay: 700ms;
     }
 
     .anim-span2,
     .anim-span4 {
+      -moz-transform: translateY(0%) scaleY(1) rotate(0.02deg);
       transform: translateY(0%) scaleY(1);
     }
 
     .card {
       &::before {
+        -moz-transform: scaleX(1) rotate(0.02deg);
         transform: scaleX(1);
       }
     }
@@ -105,19 +105,20 @@
 
 // card front & back
 .card {
-  box-shadow: inset 0 0 15px 2px rgba(0, 0, 0, 0.5);
-  border: 3px solid rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0px 0px 15px rgba(18, 18, 18, 0.5);
   background-color: $primary;
+  border: 3px solid $fourth;
   position: absolute;
   height: 100%;
   width: 100%;
 
-  transform-style: preserve-3d;
   -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
   backface-visibility: hidden;
 
   &.card__back {
     transform: rotateY(180deg);
+    border: none;
   }
 
   // dark background on click
@@ -130,8 +131,8 @@
 
     height: 100%;
     width: 100%;
-    left: 0;
-    top: 0;
+    left: 0px;
+    top: 0px;
   }
 }
 
@@ -144,69 +145,99 @@
 .projects__content {
   -webkit-font-smoothing: subpixel-antialiased;
   transform: translateZ(200px) scale(0.8);
-  // perspective: inherit !important;
-  justify-content: center;
-  align-items: center;
   position: relative;
+  padding: 0 40px;
+  font-size: 16px;
+
+  justify-content: center;
   flex-direction: column;
+  align-items: center;
   display: flex;
   height: 100%;
-  width: 100%;
 
-  padding: 0 40px;
-
-  font-size: 16px;
+  justify-content: flex-end;
 }
 
 .projects__title {
-  font-family: Saira-Medium;
+  font-family: Saira-Bold;
+  letter-spacing: 1px;
+  text-align: left;
+  align-self: start;
+  // margin-top: auto;
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.back .projects__title {
+  align-self: start;
   margin-top: auto;
-  font-size: 28px;
 }
 
 .projects__tech {
-  margin-top: auto;
-}
-
-.tech-span {
-  display: block;
+  // padding: 0px 50px;
+  // margin-top: auto;
+  align-self: flex-start;
+  // margin-bottom: auto;
+  text-align: left;
+  margin-bottom: 60px;
 }
 
 .projects__desc {
-  margin-top: auto;
-  text-align: justify;
   -moz-text-align-last: center;
-  text-align-last: center;
+  text-align-last: left;
+  text-align: justify;
   line-height: 30px;
 }
 
 .projects__link,
 .projects__code {
-  border: 2px solid rgba(0, 0, 0, 0);
   transition: all 250ms ease;
   text-decoration: none;
-  position: relative;
+  line-height: 38px;
 
   font-family: Saira-Medium;
-  position: absolute;
+  font-size: 16px;
   color: #666;
 
+  cursor: pointer;
   padding: 0px;
-  // border-radius: 50%;
   height: 40px;
   width: 40px;
-  // padding: 5px 10px;
-  cursor: pointer;
-
-  font-size: 16px;
-  line-height: 38px;
-  display: block;
-  // justify-content: center;
-  // align-items: center;
 
   &:hover,
   &:focus {
-    // border: 2px solid white;
+    text-shadow: 0 0 6px lighten($greenTheme, 20%); //#0cdf7c
+    color: lighten($greenTheme, 20%);
+  }
+}
+
+.face .projects__link,
+.face .projects__code {
+  // display: none;
+  // margin: auto 0px;
+  height: 60px;
+  width: 60px;
+
+
+  line-height: 60px;
+  font-size: 24px;
+}
+
+.face .projects__desc {
+  margin-bottom: auto;
+  margin-top: 40px;
+  // height: 120px;
+  overflow: hidden;
+  // text-overflow: ellipsis;
+  display: flex;
+}
+
+.back .projects__link,
+.back .projects__code {
+  position: absolute;
+
+  &:hover,
+  &:focus {
     text-shadow: 0 0 6px lighten($greenTheme, 20%); //#0cdf7c
     color: lighten($greenTheme, 20%);
 
@@ -217,59 +248,49 @@
   }
 
   &:visited {
-    // color: #666;
     outline: none;
   }
+}
+
+.back .projects__link {
+  bottom: 15px;
+  right: 15px;
 
   span {
-    &:nth-child(1) {
-      bottom: 100%;
-      transform: translate3d(-50%, 50%, 0px);
-    }
-    &:nth-child(2) {
-      top: 100%;
-      transform: translate3d(-50%, -50%, 0px);
-    }
+    bottom: 120%;
+    transform: translate3d(-50%, 50%, 0px);
   }
 }
 
-.projects__link {
-  bottom: 10px;
-  right: 10px;
-}
+.back .projects__code {
+  left: 15px;
+  top: 15px;
 
-.projects__code {
-  left: 10px;
-  top: 10px;
+  span {
+    top: 120%;
+    transform: translate3d(-50%, -50%, 0px);
+  }
 }
 
 .span-label {
   transition: opacity 200ms ease, transform 200ms ease;
-  position: absolute;
-  // bottom: 0;
-  // right: 0;
-  left: 50%;
-  white-space: nowrap;
-
-  background-color: $secondary;
-  padding: 5px 10px;
-
-  border: 2px solid lighten($greenTheme, 20%);
   box-shadow: 0px 0px 8px lighten($greenTheme, 20%);
+  border: 2px solid lighten($greenTheme, 20%);
+  background-color: rgba($secondary, 0.9);
+  white-space: nowrap;
+  position: absolute;
+  left: 50%;
 
-  width: auto;
-
-  color: white;
+  padding: 0px 15px;
   text-shadow: none;
+  color: white;
   opacity: 0;
 
   -webkit-user-select: none;
-
   -moz-user-select: none;
-
   -ms-user-select: none;
-
   user-select: none;
+
   pointer-events: none;
 }
 
@@ -277,16 +298,18 @@
 /* ---------------| BUTTON |--------------- */
 /* ---------------------------------------- */
 
+.back .card-button {
+  margin-top: auto;
+}
+
 .card-button {
   position: relative;
   background: none;
   color: white;
   border: none;
 
-  overflow: hidden;
-
-  margin-top: auto;
   margin-bottom: 60px;
+  overflow: hidden;
 
   &:hover,
   &:focus {
@@ -372,12 +395,12 @@
 
 .anim-span1,
 .anim-span3 {
-  height: 4px;
+  height: 3px;
 }
 
 .anim-span2,
 .anim-span4 {
-  width: 4px;
+  width: 3px;
 }
 
 .anim-span1 {
