@@ -1,6 +1,6 @@
 import Projects, { ProjectsProps } from "./components/Projects";
 import Skills, { SkillsProps } from "./components/Skills";
-import Parallax from "./components/Parallax";
+import Home from "./components/Home";
 import React, { useEffect } from "react";
 import About from "./components/About";
 import More from "./components/More";
@@ -90,7 +90,7 @@ const App = () => {
     <div className="app">
       {/* <NavBar /> */}
 
-      <Parallax />
+      <Home />
       <div className="contentWrap">
         <section>
           <About />

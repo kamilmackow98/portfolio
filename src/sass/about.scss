@@ -5,115 +5,115 @@ $interestsSizeFix: calc(20px + 3vw);
 .about__container {
   position: relative;
   padding: 100px 0;
+}
 
-  .about__content {
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-    background-color: $third;
+.about__content {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  background-color: $third;
 
-    align-items: flex-start;
-    flex-direction: column;
-    display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  display: flex;
 
-    padding: 75px 0;
+  padding: 75px 0;
+}
 
-    .about__item {
-      position: relative;
-      display: flex;
-      left: 5%;
-    }
+.about__item {
+  position: relative;
+  display: flex;
+  left: 5%;
+}
 
-    .list {
-      animation: ticker 8s ease infinite;
-      pointer-events: none;
-      user-select: none;
-      list-style: none;
-      display: table;
+.list {
+  animation: ticker 8s ease infinite;
+  pointer-events: none;
+  user-select: none;
+  list-style: none;
+  display: table;
 
-      font-weight: bold;
-      text-align: left;
+  font-weight: bold;
+  text-align: left;
 
-      margin-left: 10px;
-    }
+  margin-left: 10px;
+}
 
-    .slideshow {
-      line-height: $helloSize;
-      height: $helloSize;
-      overflow: hidden;
+.slideshow {
+  line-height: $helloSize;
+  height: $helloSize;
+  overflow: hidden;
 
-      .hello-title {
-        position: relative;
-        user-select: none;
-        margin: 0;
+  .hello-title {
+    position: relative;
+    user-select: none;
+    margin: 0;
 
-        left: -0.85%; // align with rest of the text
+    left: -0.85%; // align with rest of the text
 
-        letter-spacing: 0.25vw;
-        font-size: $helloSize;
-        font-weight: bold;
-      }
+    letter-spacing: 0.25vw;
+    font-size: $helloSize;
+    font-weight: bold;
+  }
 
-      .list {
-        letter-spacing: 0.25vw;
-        font-size: $helloSize;
-      }
-    }
+  .list {
+    letter-spacing: 0.25vw;
+    font-size: $helloSize;
+  }
+}
 
-    .interests {
-      line-height: $interestsSizeFix;
-      height: $interestsSizeFix;
-      overflow: hidden;
-      color: $fourth;
+.interests {
+  line-height: $interestsSizeFix;
+  height: $interestsSizeFix;
+  overflow: hidden;
+  color: $fourth;
 
-      .like {
-        position: relative;
-        user-select: none;
-        margin: 0;
+  .like {
+    position: relative;
+    user-select: none;
+    margin: 0;
 
-        left: -0.6%;
+    left: -0.6%;
 
-        font-size: $interestsSize;
-        font-weight: bold;
-      }
+    font-size: $interestsSize;
+    font-weight: bold;
+  }
 
-      .list {
-        font-size: $interestsSize;
+  .list {
+    font-size: $interestsSize;
 
-        li {
-          color: #077e46;
-        }
-      }
-    }
-
-    .description,
-    .typewriter {
-      font-family: Saira-Medium;
-      font-size: 20px;
-      color: #777;
-
-      text-align: left;
-    }
-
-    .desc,
-    .text-type {
-      &::selection {
-        background-color: rgba($fourth, 0.99);
-        color: $secondary;
-      }
-    }
-
-    .desc {
-      margin: 0;
-    }
-
-    .text-type {
-      white-space: pre-wrap;
-    }
-
-    .typed-cursor {
-      pointer-events: none;
-      user-select: none;
+    li {
+      color: #077e46;
     }
   }
+}
+
+.description,
+.typewriter {
+  font-family: Saira-Medium;
+  font-size: 20px;
+  color: #777;
+
+  text-align: left;
+}
+
+.desc,
+.text-type {
+  &::selection {
+    background-color: rgba($fourth, 0.99);
+    color: $secondary;
+  }
+}
+
+.desc {
+  margin: 0;
+}
+
+.text-type {
+  white-space: pre-wrap;
+}
+
+.typed-cursor {
+  pointer-events: none;
+  user-select: none;
 }
 
 @keyframes ticker {

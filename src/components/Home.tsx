@@ -1,7 +1,7 @@
 import React from "react";
 import Typed from "typed.js";
 
-const Parallax = () => {
+const Home = () => {
   React.useEffect(() => {
     let birthdate = new Date("1998/09/18"); // birthdate in YYYY/MM/DD format
     let current = new Date();
@@ -22,28 +22,6 @@ const Parallax = () => {
     };
 
     new Typed(".typewriter", options);
-
-    // parallax magic
-    function parallax() {
-      let top = window.pageYOffset; // store the value of pixels that the document has already been scrolled vertically
-
-      let layers = document.getElementsByClassName("layer"); // select all the layers and store them into "layers"
-      let layer, depth: any, yPos;
-
-      // loop for each layer
-      for (let i = 0; i < layers.length; i++) {
-        layer = layers[i];
-        depth = layer.getAttribute("data-depth");
-        yPos = -((top * depth) / 100);
-        layer.setAttribute("style", `transform: translate3d(0, ${yPos}px, 0)`);
-      }
-    }
-
-    // window.addEventListener("scroll", parallax, false);
-
-    return () => {
-      // window.removeEventListener("scroll", parallax, false);
-    };
   }, []);
 
   const handleClick = () => {
@@ -54,17 +32,15 @@ const Parallax = () => {
   };
 
   return (
-    // 0 0.10 0.20 0.40. 0.60 1.00
-    // last 0 0.10 0.25 0.40 0.60 0.90
-    <div id="parallax__container">
-      <div className="layer" data-depth="-50" id="layer-0"></div>
+    <div id="home__container">
+      <div className="layer" id="layer-0"></div>
 
-      <div className="layer" data-depth="20" id="layer-1">
+      <div className="layer" id="layer-1">
         <span className="typewriter"></span>
       </div>
 
-      <div className="layer" data-depth="20" id="layer-2">
-        <button className="parallax-btn" onClick={handleClick}>
+      <div className="layer" id="layer-2">
+        <button className="home-btn" onClick={handleClick}>
           My Work
         </button>
       </div>
@@ -72,4 +48,4 @@ const Parallax = () => {
   );
 };
 
-export default Parallax;
+export default Home;

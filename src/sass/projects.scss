@@ -73,7 +73,6 @@
   // z-index: 10;
 
   &.isFlipped {
-    -moz-transform: rotateY(180deg);
     transform: rotateY(180deg);
 
     .anim-span {
@@ -83,20 +82,17 @@
 
     .anim-span1,
     .anim-span3 {
-      -moz-transform: translateX(0%) scaleX(1) rotate(0.02deg);
       transform: translateX(0%) scaleX(1);
       transition-delay: 700ms;
     }
 
     .anim-span2,
     .anim-span4 {
-      -moz-transform: translateY(0%) scaleY(1) rotate(0.02deg);
       transform: translateY(0%) scaleY(1);
     }
 
     .card {
       &::before {
-        -moz-transform: scaleX(1) rotate(0.02deg);
         transform: scaleX(1);
       }
     }
@@ -105,9 +101,9 @@
 
 // card front & back
 .card {
-  box-shadow: inset 0px 0px 15px rgba(18, 18, 18, 0.5);
-  background-color: $primary;
+  box-shadow: inset 0px 0px 12px 5px $fourth;
   border: 3px solid $fourth;
+  background-color: $third;
   position: absolute;
   height: 100%;
   width: 100%;
@@ -163,23 +159,13 @@
   letter-spacing: 1px;
   text-align: left;
   align-self: start;
-  // margin-top: auto;
+  position: relative;
   font-size: 42px;
-  margin-bottom: 10px;
 }
 
 .back .projects__title {
   align-self: start;
   margin-top: auto;
-}
-
-.projects__tech {
-  // padding: 0px 50px;
-  // margin-top: auto;
-  align-self: flex-start;
-  // margin-bottom: auto;
-  text-align: left;
-  margin-bottom: 60px;
 }
 
 .projects__desc {
@@ -189,8 +175,24 @@
   line-height: 30px;
 }
 
+.face .projects__desc {
+  margin: auto 0px;
+}
+
+.projects__tech {
+  align-self: flex-start;
+  text-align: left;
+}
+
+.projects__links {
+  margin-bottom: 5px;
+  display: flex;
+  width: 100%;
+}
+
 .projects__link,
 .projects__code {
+  text-shadow: 0 0 6px transparent;
   transition: all 250ms ease;
   text-decoration: none;
   line-height: 38px;
@@ -203,33 +205,36 @@
   padding: 0px;
   height: 40px;
   width: 40px;
-
-  &:hover,
-  &:focus {
-    text-shadow: 0 0 6px lighten($greenTheme, 20%); //#0cdf7c
-    color: lighten($greenTheme, 20%);
-  }
 }
 
 .face .projects__link,
 .face .projects__code {
-  // display: none;
-  // margin: auto 0px;
-  height: 60px;
-  width: 60px;
+  box-shadow: -2px 2px 6px rgba(0, 0, 0, 0.1);
+  background-color: $primary;
+  position: relative;
 
+  margin-right: 10px;
+  height: 40px;
+  width: 50px;
 
-  line-height: 60px;
-  font-size: 24px;
-}
-
-.face .projects__desc {
-  margin-bottom: auto;
-  margin-top: 40px;
-  // height: 120px;
-  overflow: hidden;
-  // text-overflow: ellipsis;
+  justify-content: center;
+  align-items: center;
+  color: white;
   display: flex;
+
+  font-size: 18px;
+
+  &:hover,
+  &:focus {
+    text-shadow: 0 0 6px white;
+    color: white;
+
+    span {
+      transform: translate3d(-50%, 0%, 0px);
+      bottom: calc(100% + 10px);
+      opacity: 1;
+    }
+  }
 }
 
 .back .projects__link,
@@ -274,31 +279,47 @@
 
 .span-label {
   transition: opacity 200ms ease, transform 200ms ease;
-  box-shadow: 0px 0px 8px lighten($greenTheme, 20%);
-  border: 2px solid lighten($greenTheme, 20%);
-  background-color: rgba($secondary, 0.9);
   white-space: nowrap;
   position: absolute;
+  padding: 0px 15px;
   left: 50%;
 
-  padding: 0px 15px;
+  pointer-events: none;
   text-shadow: none;
   color: white;
-  opacity: 0;
 
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
 
-  pointer-events: none;
+  opacity: 0;
+}
+
+.face .span-label {
+  box-shadow: -2px 2px 6px rgba(0, 0, 0, 0.1);
+  transform: translate3d(-50%, 50%, 0px);
+  background-color: $primary;
+  bottom: 100%;
+  left: 50%;
+}
+
+.back .span-label {
+  box-shadow: 0px 0px 8px lighten($greenTheme, 20%);
+  border: 2px solid lighten($greenTheme, 20%);
+  background-color: rgba($secondary, 0.9);
 }
 
 /* ---------------------------------------- */
 /* ---------------| BUTTON |--------------- */
 /* ---------------------------------------- */
 
+.face .card-button {
+  margin: 60px 0px;
+}
+
 .back .card-button {
+  margin-bottom: 60px;
   margin-top: auto;
 }
 
@@ -308,7 +329,6 @@
   color: white;
   border: none;
 
-  margin-bottom: 60px;
   overflow: hidden;
 
   &:hover,

@@ -83,6 +83,10 @@ const Projects = () => {
     }, 500);
   };
 
+  function truncateString(txt: string) {
+    return txt.trim().split(" ").splice(0, 30).join(" ") + "...";
+  }
+
   return (
     <>
       <div className="projects__bgText txt1">
@@ -110,41 +114,44 @@ const Projects = () => {
               {/* front side of the card*/}
               <div className="card card__front">
                 <div className="projects__content face">
-                  <div className="projects__desc">{project.description}</div>
-                  {project.code ? (
-                    <a className="projects__code" href={`${project.code}`} target="_blank" rel="noopener noreferrer">
-                      <span className="span-label">Code</span>
-                      <i className="fas fa-code"></i>
-                    </a>
-                  ) : (
-                    <a
-                      className="projects__code"
-                      href="#0"
-                      onClick={(e) => {
-                        contactMe(e);
-                      }}
-                    >
-                      <span className="span-label">Contact me for code</span>
-                      <i className="fas fa-code"></i>
-                    </a>
-                  )}
-                  {project.link ? (
-                    <a className="projects__link" href={`${project.link}`} target="_blank" rel="noopener noreferrer">
-                      <span className="span-label">Preview</span>
-                      <i className="fas fa-search"></i>
-                    </a>
-                  ) : (
-                    <a
-                      className="projects__link"
-                      href="#0"
-                      onClick={(e) => {
-                        contactMe(e);
-                      }}
-                    >
-                      <span className="span-label">Contact me for preview</span>
-                      <i className="fas fa-search"></i>
-                    </a>
-                  )}
+                  <div className="projects__desc">{truncateString(project.description)}</div>
+
+                  <div className="projects__links">
+                    {project.code ? (
+                      <a className="projects__code" href={`${project.code}`} target="_blank" rel="noopener noreferrer">
+                        <span className="span-label">Code</span>
+                        <i className="fas fa-code"></i>
+                      </a>
+                    ) : (
+                      <a
+                        className="projects__code"
+                        href="#0"
+                        onClick={(e) => {
+                          contactMe(e);
+                        }}
+                      >
+                        <span className="span-label">Contact me for code</span>
+                        <i className="fas fa-code"></i>
+                      </a>
+                    )}
+                    {project.link ? (
+                      <a className="projects__link" href={`${project.link}`} target="_blank" rel="noopener noreferrer">
+                        <span className="span-label">Preview</span>
+                        <i className="fas fa-search"></i>
+                      </a>
+                    ) : (
+                      <a
+                        className="projects__link"
+                        href="#0"
+                        onClick={(e) => {
+                          contactMe(e);
+                        }}
+                      >
+                        <span className="span-label">Contact me for preview</span>
+                        <i className="fas fa-search"></i>
+                      </a>
+                    )}
+                  </div>
 
                   <div className="projects__title">{project.title}</div>
 
