@@ -1,15 +1,11 @@
-$helloSize: calc(24px + 4vw);
-$interestsSize: calc(16px + 2vw);
-$interestsSizeFix: calc(20px + 3vw);
-
 .about__container {
   position: relative;
-  padding: 100px 0;
+  padding: 50px 0; // set 100px on desktop
 }
 
 .about__content {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  background-color: $third;
+  background-color: $secondary;
 
   align-items: flex-start;
   flex-direction: column;
@@ -21,10 +17,10 @@ $interestsSizeFix: calc(20px + 3vw);
 .about__item {
   position: relative;
   display: flex;
-  left: 5%;
+  left: 7.5%;
 }
 
-.list {
+.about__list {
   animation: ticker 8s ease infinite;
   pointer-events: none;
   user-select: none;
@@ -34,51 +30,55 @@ $interestsSizeFix: calc(20px + 3vw);
   font-weight: bold;
   text-align: left;
 
-  margin-left: 10px;
+  margin-left: 5px; // on desktop change to 10px
 }
 
-.slideshow {
-  line-height: $helloSize;
-  height: $helloSize;
+// 2 / 3 ratio for titles
+$hello1: 48px;
+$like1: 32px;
+
+.about__item.slideshow {
+  line-height: $hello1;
+  height: $hello1;
   overflow: hidden;
 
-  .hello-title {
+  .about__hello-title {
     position: relative;
     user-select: none;
     margin: 0;
 
-    left: -0.85%; // align with rest of the text
+    left: -0.4%; // align with rest of the text
 
     letter-spacing: 0.25vw;
-    font-size: $helloSize;
+    font-size: $hello1;
     font-weight: bold;
   }
 
-  .list {
+  .about__list {
     letter-spacing: 0.25vw;
-    font-size: $helloSize;
+    font-size: $hello1;
   }
 }
 
-.interests {
-  line-height: $interestsSizeFix;
-  height: $interestsSizeFix;
+.about__item.interests {
+  line-height: $like1 + 4px;
+  height: $like1 + 4px;
   overflow: hidden;
   color: $fourth;
 
-  .like {
+  .about__like {
     position: relative;
     user-select: none;
     margin: 0;
 
-    left: -0.6%;
+    left: -0.2%;
 
-    font-size: $interestsSize;
+    font-size: $like1;
     font-weight: bold;
   }
 
-  .list {
-    font-size: $interestsSize;
+  .about__list {
+    font-size: $like1;
 
     li {
       color: #077e46;
@@ -86,34 +86,261 @@ $interestsSizeFix: calc(20px + 3vw);
   }
 }
 
-.description,
-.typewriter {
+.about__description,
+.about__typewriter {
   font-family: Saira-Medium;
-  font-size: 20px;
+  font-size: 15px;
   color: #777;
 
   text-align: left;
 }
 
-.desc,
-.text-type {
+.about__desc,
+.about__text-type {
   &::selection {
     background-color: rgba($fourth, 0.99);
-    color: $secondary;
+    color: white;
   }
 }
 
-.desc {
-  margin: 0;
+.about__desc {
+  margin: 0px;
 }
 
-.text-type {
+.about__text-type {
   white-space: pre-wrap;
 }
 
 .typed-cursor {
   pointer-events: none;
   user-select: none;
+}
+
+$hello2: 56px;
+$like2: 37px;
+
+@media (min-width: 481px) {
+  .about__item {
+    left: 0px;
+    width: 400px;
+
+    align-self: center;
+  }
+
+  .about__item.slideshow {
+    line-height: $hello2;
+    height: $hello2;
+
+    .about__hello-title,
+    .about__list {
+      font-size: $hello2;
+    }
+  }
+
+  .about__item.interests {
+    line-height: $like2 + 4px;
+    height: $like2 + 4px;
+
+    .about__like,
+    .about__list {
+      font-size: $like2;
+    }
+  }
+}
+
+$hello3: 64px;
+$like3: 42px;
+
+@media (min-width: 641px) {
+  .about__item {
+    width: 450px;
+  }
+
+  .about__item.slideshow {
+    line-height: $hello3;
+    height: $hello3;
+
+    .about__hello-title,
+    .about__list {
+      font-size: $hello3;
+    }
+  }
+
+  .about__item.interests {
+    line-height: $like3 + 5px;
+    height: $like3 + 5px;
+
+    .about__like,
+    .about__list {
+      font-size: $like3;
+    }
+  }
+
+  .about__description,
+  .about__typewriter {
+    font-size: 16px;
+  }
+}
+
+$hello4: 74px;
+$like4: 49px;
+
+@media (min-width: 961px) {
+  .about__item {
+    width: 890px;
+  }
+
+  .about__item.slideshow {
+    line-height: $hello4;
+    height: $hello4;
+
+    .about__hello-title,
+    .about__list {
+      font-size: $hello4;
+    }
+  }
+
+  .about__item.interests {
+    line-height: $like4 + 5px;
+    height: $like4 + 5px;
+
+    .about__like,
+    .about__list {
+      font-size: $like4;
+    }
+  }
+
+  .about__description,
+  .about__typewriter {
+    font-size: 18px;
+  }
+}
+
+$hello5: 84px;
+$like5: 56px;
+
+@media (min-width: 1281px) {
+  .about__item {
+    width: 1220px;
+  }
+
+  .about__item.slideshow {
+    line-height: $hello5;
+    height: $hello5;
+
+    .about__hello-title,
+    .about__list {
+      font-size: $hello5;
+    }
+  }
+
+  .about__item.interests {
+    line-height: $like5 + 5px;
+    height: $like5 + 5px;
+
+    .about__like,
+    .about__list {
+      font-size: $like5;
+    }
+  }
+}
+
+$hello6: 88px;
+$like6: 58px;
+
+@media (min-width: 1367px) {
+  .about__item {
+    width: 1310px;
+  }
+
+  .about__item.slideshow {
+    line-height: $hello6;
+    height: $hello6;
+
+    .about__hello-title,
+    .about__list {
+      font-size: $hello6;
+    }
+  }
+
+  .about__item.interests {
+    line-height: $like6 + 6px;
+    height: $like6 + 6px;
+
+    .about__like,
+    .about__list {
+      font-size: $like6;
+    }
+  }
+}
+
+@media (min-width: 1441px) {
+  .about__item {
+    width: 1370px;
+  }
+}
+
+$hello7: 94px;
+$like7: 62px;
+
+@media (min-width: 1681px) {
+  .about__item {
+    width: 1610px;
+  }
+
+  .about__item.slideshow {
+    line-height: $hello7;
+    height: $hello7;
+
+    .about__hello-title,
+    .about__list {
+      font-size: $hello7;
+    }
+  }
+
+  .about__item.interests {
+    line-height: $like7 + 6px;
+    height: $like7 + 6px;
+
+    .about__like,
+    .about__list {
+      font-size: $like7;
+    }
+  }
+}
+
+$hello8: 102px;
+$like8: 68px;
+
+@media (min-width: 1769px) {
+  .about__item {
+    width: 1690px;
+  }
+
+  .about__item.slideshow {
+    line-height: $hello8;
+    height: $hello8;
+
+    .about__hello-title,
+    .about__list {
+      font-size: $hello8;
+    }
+  }
+
+  .about__item.interests {
+    line-height: $like8 + 6px;
+    height: $like8 + 6px;
+
+    .about__like,
+    .about__list {
+      font-size: $like8;
+    }
+  }
+
+  .about__description,
+  .about__typewriter {
+    font-size: 19px;
+  }
 }
 
 @keyframes ticker {

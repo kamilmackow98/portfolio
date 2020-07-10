@@ -7,9 +7,8 @@
   user-select: none;
   cursor: default;
 
-  font-size: 16px;
-
   padding: 100px 0;
+  font-size: 16px;
 }
 
 .skills__item {
@@ -44,15 +43,17 @@
     margin-bottom: 30px; // 75% from padding on .skills__content
     margin-top: 0;
 
-    font-size: 24px;
+    font-size: 28px;
   }
 }
 
 .skills__ul {
   flex-direction: column;
   align-items: center;
+  align-self: center;
   display: flex;
   height: 100%;
+  width: 65%;
 
   pointer-events: none;
 
@@ -65,29 +66,19 @@
     text-align: center;
     display: flex;
 
-    transition: all 250ms ease;
+    transition: color 250ms ease, opacity 250ms linear;
     pointer-events: auto;
     white-space: nowrap;
 
-    padding: 10px 0;
-    width: 50%;
+    padding: 12px 0;
+    width: 100%;
 
-    border-bottom: 1px solid $fourth;
-    border-top: 1px solid $fourth;
+    font-family: Saira-Medium;
+    color: #777;
 
     &:hover {
-      background: $fourth;
       color: white;
-      width: 80%;
       opacity: 1;
-    }
-
-    &:first-of-type {
-      border-top: none;
-    }
-
-    &:last-of-type {
-      border-bottom: none;
     }
   }
 }
@@ -124,14 +115,8 @@
   }
 
   .skills__content {
-    padding: 50px 0;
-
     max-width: 510px;
     width: 420px;
-
-    h3 {
-      margin-bottom: 37.5px;
-    }
   }
 }
 
@@ -145,7 +130,7 @@
   .skills__item {
     margin-bottom: 0px;
 
-    // middle skill item (Good)
+    // middle skills item (Good)
     &:nth-child(3) {
       margin: 0 40px;
     }
@@ -154,10 +139,6 @@
   .skills__content {
     padding: 60px 0;
     width: 380px;
-
-    h3 {
-      margin-bottom: 45px;
-    }
   }
 
   .skills__ul {

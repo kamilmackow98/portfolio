@@ -1,97 +1,21 @@
 import Projects, { ProjectsProps } from "./components/Projects";
 import Skills, { SkillsProps } from "./components/Skills";
 import Home from "./components/Home";
-import React, { useEffect } from "react";
+import React from "react";
 import About from "./components/About";
 import More from "./components/More";
 
 import "./sass/App.scss";
 import Timeline from "./components/Timeline";
 
-/**
- * TODO : cleanUp every eventListener in useEffect()
- */
-
 const App = () => {
-  useEffect(() => {
-    // after page refresh will be scrolled to the top
-    // window.onbeforeunload = function() {
-    //     window.scrollTo(0, 0);
-    // };
-    /*
-    let navBar = document.getElementsByClassName("navBar") as HTMLCollectionOf<HTMLElement>;
-    let currentScrollTop = 0;
-    let c: number;
-
-    
-    // hide or show up the nav bar
-    window.addEventListener("scroll", function (event) {
-      let top = this.pageYOffset; // scroll position
-      // let barHeight = navBar[0].offsetHeight; // height of the nav bar
-
-      currentScrollTop = top;
-
-      // used to be c < currentScrollTop && top > barHeight + barHeight
-      // and else if (c > currentScrollTop && !(top <= barHeight))
-      if (c < currentScrollTop) {
-        // on scrolling down
-        navBar[0].classList.remove("scrollUp");
-        navBar[0].classList.add("scrollDown");
-      } else {
-        // on scrolling up
-        navBar[0].classList.remove("scrollDown");
-        navBar[0].classList.add("scrollUp");
-      }
-
-      c = currentScrollTop;
-    });
-
-    // event listener for each nav link, on click will scroll to its section
-    let navLinks = document.getElementsByClassName("navItem");
-
-    // for each nav link add click event
-    for (let i = 0; i < navLinks.length; i++) {
-      let c: number;
-
-      navLinks[i].addEventListener("click", function () {
-        let topPos = sections[i].offsetTop; // each section scroll position
-        let currentPos = window.pageYOffset;
-
-        if (c < currentPos) {
-          window.scrollTo({ top: topPos - 48, behavior: "smooth" });
-        } else {
-          window.scrollTo({ top: topPos, behavior: "smooth" });
-        }
-
-        c = currentPos;
-
-        // other way to do it
-        // sections[i].scrollIntoView({
-        //     behavior: "smooth",
-        //     block: "start",
-        //     inline: "nearest"
-        // });
-      });
-    } */
-    /*
-    let sections = document.getElementsByClassName("sectionContainer") as HTMLCollectionOf<HTMLElement>;
-
-    //arrow link to scroll to about section
-    let arrowLink = document.getElementsByClassName("arrowLink")[0];
-
-    arrowLink.addEventListener("click", function () {
-      let aboutTopPosition = sections[0].offsetTop; // about top position
-
-      window.scrollTo({ top: aboutTopPosition, behavior: "smooth" });
-    }); */
-  }, []);
 
   return (
     <div className="app">
       {/* <NavBar /> */}
 
       <Home />
-      <div className="contentWrap">
+      <div className="content__wrap">
         <section>
           <About />
         </section>

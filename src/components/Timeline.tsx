@@ -18,49 +18,49 @@ const Timeline = () => {
 
   return (
     <div className="timeline__container">
-      <span className="topShadow"></span>
-      <span className="botShadow"></span>
+      <span className="timeline__top-shadow"></span>
+      <span className="timeline__bot-shadow"></span>
 
       <div className="timeline__item">
-        <div className="content">
-          <div className="year">1998</div>
-          <div className="title">I'm born</div>
-          <p>Unbelievable but it's true</p>
+        <div className="timeline__content">
+          <div className="timeline__year">1998</div>
+          <div className="timeline__title">I'm born</div>
+          <p>The journey begins!</p>
         </div>
       </div>
 
       <div className="timeline__item">
-        <div className="content">
-          <div className="year">2014</div>
-          <div className="title">High School at Fameck</div>
+        <div className="timeline__content">
+          <div className="timeline__year">2014</div>
+          <div className="timeline__title">High School at Fameck</div>
           <p>Baccalauréat Scientifique (High School diploma, scientific option)</p>
         </div>
       </div>
 
       <div className="timeline__item">
-        <div className="content">
-          <div className="year">2017</div>
-          <div className="title">DUT (BTEC Higher National Diploma)</div>
+        <div className="timeline__content">
+          <div className="timeline__year">2017</div>
+          <div className="timeline__title">DUT (BTEC Higher National Diploma)</div>
           <p>University Institute of Technology at Metz</p>
         </div>
       </div>
 
       <div className="timeline__item">
-        <div className="content">
-          <div className="year">04 / 2019 - 06 / 2019</div>
-          <div className="title">Internship at 3d2lux</div>
+        <div className="timeline__content">
+          <div className="timeline__year">04 / 2019 - 06 / 2019</div>
+          <div className="timeline__title">Internship at 3d2lux</div>
           <p>Web development WordPress, JavaScript & PHP</p>
         </div>
       </div>
 
       <div className="timeline__item">
-        <div className="content">
-          <div className="year">Now</div>
-          <div className="title">
+        <div className="timeline__content">
+          <div className="timeline__year">Now</div>
+          <div className="timeline__title">
             <span className="companyTxt">Your company?</span>
             <span className="companyTxt"> An interesting project?</span>
           </div>
-          <div className="type">
+          <div className="timeline__type">
             <span className="timeline-txt"></span>
           </div>
         </div>
