@@ -37,7 +37,7 @@
     right: 5%;
     top: 0px;
 
-    filter: drop-shadow(0px 0px 2px $secondary);
+    filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.6));
     animation: levitate 2.5s ease-in-out infinite alternate;
   }
 
@@ -112,8 +112,8 @@
 
 @keyframes levitate {
   100% {
-    -moz-transform: translate3d(0px, -30%, 0px) rotate(0.02deg);
-    filter: drop-shadow(0px 20px 6px rgba(0, 0, 0, 0.25));
-    transform: translate3d(0px, -5%, 0px);
+    -moz-transform: translate3d(0px, -40px, 0px) rotate(0.02deg);
+    filter: drop-shadow(0px 40px 8px rgba(0, 0, 0, 0.15));
+    transform: translate3d(0px, -40px, 0px);
   }
 }

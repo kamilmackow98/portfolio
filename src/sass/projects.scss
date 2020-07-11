@@ -31,17 +31,29 @@
   height: 50px;
   width: 50px;
 
+  &:disabled {
+    background-color: transparent !important;
+    background: none !important;
+  }
+
+  &:hover,
+  &:focus {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+  }
+
   &:hover:not(:disabled) {
-    color: rgba(255, 255, 255, 0.8);
-    background: none;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0) !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+    background: none !important;
+    outline: none !important;
   }
 
   &.previous {
-    left: 15vw;
+    left: -5px;
   }
 
   &.next {
-    right: 15vw;
+    right: -5px;
   }
 }
 
@@ -59,18 +71,9 @@
   position: relative;
 
   height: 600px;
-  width: 80%;
+  width: 85%;
 
-  max-width: 500px;
   margin: 200px 0px;
-
-  // width: 27.5vw;
-  // height: 35vw;
-
-  // height: 700px;
-  // width: 525px;
-
-  // z-index: 10;
 
   &.isFlipped {
     transform: rotateY(180deg);
@@ -142,8 +145,8 @@
   -webkit-font-smoothing: subpixel-antialiased;
   transform: translateZ(200px) scale(0.8);
   position: relative;
-  padding: 0 40px;
-  font-size: 16px;
+  padding: 0px 30px; // 0px 40px
+  font-size: 15px;
 
   justify-content: center;
   flex-direction: column;
@@ -160,7 +163,10 @@
   text-align: left;
   align-self: start;
   position: relative;
-  font-size: 42px;
+  font-size: 32px; // 42px
+
+  line-height: 100%;
+  margin: 10px 0px;
 }
 
 .back .projects__title {
@@ -172,7 +178,7 @@
   -moz-text-align-last: center;
   text-align-last: left;
   text-align: justify;
-  line-height: 30px;
+  line-height: 26px;
 }
 
 .face .projects__desc {
@@ -182,6 +188,7 @@
 .projects__tech {
   align-self: flex-start;
   text-align: left;
+  font-size: 15px;
 }
 
 .projects__links {
@@ -214,15 +221,15 @@
   position: relative;
 
   margin-right: 10px;
-  height: 40px;
-  width: 50px;
+  height: 36px;
+  width: 46px;
 
   justify-content: center;
   align-items: center;
   color: white;
   display: flex;
 
-  font-size: 18px;
+  font-size: 16px;
 
   &:hover,
   &:focus {
@@ -285,6 +292,7 @@
 
   pointer-events: none;
   text-shadow: none;
+  font-size: 15px;
   color: white;
 
   -webkit-user-select: none;
@@ -314,11 +322,11 @@
 /* ---------------------------------------- */
 
 .face .card-button {
-  margin: 60px 0px;
+  margin: 40px 0px;
 }
 
 .back .card-button {
-  margin-bottom: 60px;
+  margin-bottom: 40px;
   margin-top: auto;
 }
 
@@ -329,6 +337,7 @@
   border: none;
 
   overflow: hidden;
+  font-size: 15px;
 
   &:hover,
   &:focus {
@@ -446,9 +455,95 @@
   top: 0;
 }
 
+@media (min-width: 481px) {
+  .card-container {
+    height: 560px;
+    width: 400px;
+  }
+}
+
+@media (min-width: 641px) {
+  .card-container {
+    height: 630px;
+    width: 450px;
+  }
+
+  .face .projects__link,
+  .face .projects__code {
+    font-size: 18px;
+
+    height: 40px;
+    width: 50px;
+  }
+
+  .projects__title {
+    font-size: 42px;
+  }
+
+  .projects__content {
+    padding: 0px 40px;
+    font-size: 16px;
+  }
+
+  .projects__desc {
+    line-height: 30px;
+  }
+
+  .projects__tech,
+  .span-label,
+  .card-button {
+    font-size: 16px;
+  }
+
+  .face .card-button {
+    margin: 60px 0px;
+  }
+
+  .back .card-button {
+    margin-bottom: 60px;
+  }
+
+  .flickity-button {
+    &.previous {
+      left: 5%;
+    }
+
+    &.next {
+      right: 5%;
+    }
+  }
+}
+
+@media (min-width: 961px) and (max-width: 1280px) {
+  .card-container {
+    height: 588px;
+    width: 420px;
+  }
+
+  .flickity-button { 
+    &.previous {
+      left: 10%;
+    }
+
+    &.next {
+      right: 10%;
+    }
+   }
+}
+
 @media (min-width: 1281px) {
   .card-container {
     height: 700px;
-    width: 525px;
+    width: 500px;
   }
+
+  .flickity-button { 
+    &.previous {
+      left: 15%;
+    }
+
+    &.next {
+      right: 15%;
+    }
+   }
 }
