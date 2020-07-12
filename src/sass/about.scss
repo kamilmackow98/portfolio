@@ -7,8 +7,8 @@
 }
 
 .about__content {
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  background-color: $secondary;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2), 0 -5px 10px rgba(0, 0, 0, 0.2);
+  background-color: rgba($secondary, 0.75);
 
   align-items: flex-start;
   flex-direction: column;

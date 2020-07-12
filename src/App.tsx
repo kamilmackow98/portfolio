@@ -57,7 +57,7 @@ export let ProjectsCollection: ProjectsProps[] = [
   {
     title: "EcoLogTrans",
     description:
-      "Small brochure website for my cousin's transport company EcoLogTrans, with some basic features like Google Maps, contact forms or an option to choose between two languages that are dynamically displayed on the website but are still rendered on the server side.",
+      "Small brochure website for my cousin's transport company EcoLogTrans, with some basic features like Google Maps, contact form or an option to choose between two languages that are dynamically displayed on the website but are still rendered on the server side.",
     progLang: ["JavaScript", "PHP", "PHPMailer", "SCSS"],
     link: "https://www.ecologtrans.pl",
   },

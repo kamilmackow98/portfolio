@@ -25,7 +25,7 @@ const Timeline = () => {
         <div className="timeline__content">
           <div className="timeline__year">1998</div>
           <div className="timeline__title">I'm born</div>
-          <p>The journey begins!</p>
+          <p>Pretty much when it all started</p>
         </div>
       </div>
 

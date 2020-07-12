@@ -22,12 +22,12 @@ ul {
   position: relative;
   height: 100%;
   width: 100%;
-  z-index: 1;
+  z-index: 10;
 
-  -webkit-clip-path: polygon(50% 1%, 100% 0%, 100% 100%, 0 100%, 0 0%);
-  clip-path: polygon(50% 1%, 100% 0%, 100% 100%, 0 100%, 0 0%);
+  -webkit-clip-path: polygon(50% 0.5%, 100% 0%, 100% 100%, 0 100%, 0 0%);
+  clip-path: polygon(50% 0.5%, 100% 0%, 100% 100%, 0 100%, 0 0%);
   margin-top: -100px;
-  padding-top: 200px;
+  padding-top: 100px;
 
   &::before {
     position: absolute;
@@ -52,8 +52,8 @@ section {
 .about__bgText,
 .skills__bgText,
 .projects__bgText {
-  font-family: Saira-Medium;
   transition: all 250ms ease;
+  font-family: Saira-Medium;
   font-size: 96px;
 
   -webkit-user-select: none;
@@ -70,7 +70,6 @@ section {
     -webkit-animation: bounce 3s ease-in-out infinite alternate;
     text-shadow: 0 2px 6px rgba(darken($secondary, 5%), 0.15);
     animation: bounce 3s ease-in-out infinite alternate;
-    transition: text-shadow 250ms ease;
 
     &:nth-child(2) {
       -webkit-animation-delay: 0.2s;
@@ -103,11 +102,9 @@ section {
   }
 
   &.isGlowing {
-    color: lighten($greenTheme, 20%);
     -webkit-filter: drop-shadow(0px 0px 4px lighten($greenTheme, 20%));
     filter: drop-shadow(0px 0px 4px lighten($greenTheme, 20%));
-
-    // text-shadow: 0px 0px 4px lighten($greenTheme, 20%);
+    color: lighten($greenTheme, 20%);
   }
 }
 
@@ -123,14 +120,14 @@ section {
 }
 
 .projects__bgText {
+  align-self: center;
+
   &.txt1 {
-    right: 5%;
-    top: 15%;
+    top: 5%;
   }
 
   &.txt2 {
-    bottom: 10%;
-    left: 5%;
+    bottom: 2.5%;
 
     span {
       -webkit-animation: bounce 3s ease-in-out infinite alternate;
@@ -196,6 +193,17 @@ section {
     top: -5.5%;
   }
 
+  .projects__bgText {
+    &.txt1 {
+      right: 2.5%;
+      top: 7.5%;
+    }
+
+    &.txt2 {
+      left: 2.5%;
+    }
+  }
+
   .about__bgText,
   .skills__bgText,
   .projects__bgText {
@@ -204,6 +212,11 @@ section {
 }
 
 @media (min-width: 961px) {
+  .content__wrap {
+    -webkit-clip-path: polygon(50% 1%, 100% 0%, 100% 100%, 0 100%, 0 0%);
+    clip-path: polygon(50% 1%, 100% 0%, 100% 100%, 0 100%, 0 0%);
+  }
+  
   .about__bgText {
     justify-content: flex-end;
     top: 25%;
@@ -215,6 +228,16 @@ section {
     width: auto;
     left: 15%;
     top: -8%;
+  }
+
+  .projects__bgText {
+    &.txt1 {
+      right: 5%;
+    }
+
+    &.txt2 {
+      left: 5%;
+    }
   }
 
   .about__bgText,
@@ -232,6 +255,16 @@ section {
   .skills__bgText {
     left: 17.5%;
     top: -4%;
+  }
+
+  .projects__bgText {
+    &.txt1 {
+      top: 12.5%;
+    }
+
+    &.txt2 {
+      bottom: 5%;
+    }
   }
 
   .about__bgText,

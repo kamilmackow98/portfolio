@@ -18,14 +18,14 @@ const Projects = () => {
   // ref for flickity so it can be used in useEffect hook
   let flickity = React.useRef() as React.MutableRefObject<React.ReactNode>;
 
-  // after component mount add Flickity on id projectsContainer
+  // after component mount add Flickity on id projects__cntainer
   React.useEffect(() => {
     let projTxts = document.querySelectorAll(".projects__bgText") as NodeListOf<HTMLElement>;
     let cards = document.querySelectorAll(".card-container") as NodeListOf<HTMLElement>;
     let flkty = flickity.current as Flickity;
     let prevIndex: number = 0;
 
-    flkty = new Flickity("#projectsContainer", {
+    flkty = new Flickity("#projects__container", {
       percentPosition: true,
       dragThreshold: 25,
       pageDots: false,
@@ -107,7 +107,7 @@ const Projects = () => {
         <span>k</span>
       </div>
 
-      <div id="projectsContainer">
+      <div id="projects__container">
         {ProjectsCollection.map((project, i) => (
           <div className="projects__item" key={i}>
             <div className="card-container">

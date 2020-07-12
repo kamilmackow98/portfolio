@@ -2,9 +2,12 @@
   -webkit-clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 95%);
   clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 95%);
   background-color: $secondary;
+
+  flex-direction: column;
+  display: flex;
 }
 
-#projectsContainer {
+#projects__container {
   pointer-events: none;
   position: relative;
   width: 100%;
