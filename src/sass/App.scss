@@ -216,7 +216,7 @@ section {
     -webkit-clip-path: polygon(50% 1%, 100% 0%, 100% 100%, 0 100%, 0 0%);
     clip-path: polygon(50% 1%, 100% 0%, 100% 100%, 0 100%, 0 0%);
   }
-  
+
   .about__bgText {
     justify-content: flex-end;
     top: 25%;
@@ -309,16 +309,26 @@ section {
 
 @-webkit-keyframes bounce {
   100% {
-    -moz-transform: translate3d(0px, -30%, 0px) rotate(0.02deg);
     text-shadow: 0 40px 12px rgba(0, 0, 0, 0.075);
+    -moz-transform: translate3d(0px, -30%, 0px);
     transform: translate3d(0px, -30%, 0px);
   }
 }
 
 @keyframes bounce {
   100% {
-    -moz-transform: translate3d(0px, -30%, 0px) rotate(0.02deg);
     text-shadow: 0 40px 12px rgba(0, 0, 0, 0.075);
+    -moz-transform: translate3d(0px, -30%, 0px);
     transform: translate3d(0px, -30%, 0px);
+  }
+}
+
+@-moz-document url-prefix() {
+  @-webkit-keyframes bounce {
+    // empty for performance issues
+  }
+
+  @keyframes bounce {
+    // empty for performance issues
   }
 }

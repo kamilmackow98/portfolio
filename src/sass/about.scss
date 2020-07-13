@@ -24,9 +24,13 @@
 }
 
 .about__list {
-  animation: ticker 8s ease infinite;
+  -webkit-animation: ticker 8s ease infinite;
+          animation: ticker 8s ease infinite;
   pointer-events: none;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   list-style: none;
   display: table;
 
@@ -47,7 +51,10 @@ $like1: 32px;
 
   .about__hello-title {
     position: relative;
-    user-select: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
     margin: 0;
 
     left: -0.4%; // align with rest of the text
@@ -71,7 +78,10 @@ $like1: 32px;
 
   .about__like {
     position: relative;
-    user-select: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
     margin: 0;
 
     left: -0.2%;
@@ -100,6 +110,10 @@ $like1: 32px;
 
 .about__desc,
 .about__text-type {
+  &::-moz-selection {
+    background-color: rgba($fourth, 0.99);
+    color: white;
+  }
   &::selection {
     background-color: rgba($fourth, 0.99);
     color: white;
@@ -116,7 +130,10 @@ $like1: 32px;
 
 .typed-cursor {
   pointer-events: none;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 $hello2: 56px;
@@ -347,6 +364,28 @@ $like8: 68px;
   .about__description,
   .about__typewriter {
     font-size: 19px;
+  }
+}
+
+@-webkit-keyframes ticker {
+  0%,
+  20% {
+    transform: translateY(-80%);
+  }
+  25%,
+  45% {
+    transform: translateY(-60%);
+  }
+  50%,
+  70% {
+    transform: translateY(-40%);
+  }
+  75%,
+  95% {
+    transform: translateY(-20%);
+  }
+  100% {
+    transform: translateY(0%);
   }
 }
 

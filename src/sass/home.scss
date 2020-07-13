@@ -39,7 +39,10 @@
   right: 1.5%;
   top: 0px;
 
+  -webkit-filter: drop-shadow(0 2px 6px rgba(darken($secondary, 5%), 0.25));
+
   filter: drop-shadow(0 2px 6px rgba(darken($secondary, 5%), 0.25)); // 0 2px 6px rgba(darken($secondary, 5%), 0.15)
+  -webkit-animation: levitate 2.5s ease-in-out infinite alternate;
   animation: levitate 2.5s ease-in-out infinite alternate;
 
   opacity: 0.25;
@@ -47,6 +50,9 @@
 
 .typed-cursor {
   pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none;
 }
 
@@ -78,10 +84,20 @@
   .home__prop {
     color: #077e46;
 
+    &::-moz-selection {
+      background-color: rgba($fourth, 0.99);
+      color: white;
+    }
+
     &::selection {
       background-color: rgba($fourth, 0.99);
       color: white;
     }
+  }
+
+  &::-moz-selection {
+    background-color: rgba($fourth, 0.99);
+    color: $secondary;
   }
 
   &::selection {
@@ -195,10 +211,30 @@
   }
 }
 
+@-webkit-keyframes levitate {
+  100% {
+    -webkit-filter: drop-shadow(0px 40px 8px rgba(0, 0, 0, 0.15));
+    filter: drop-shadow(0px 40px 8px rgba(0, 0, 0, 0.15));
+    -moz-transform: translate3d(0px, -40px, 0px);
+    transform: translate3d(0px, -40px, 0px);
+  }
+}
+
 @keyframes levitate {
   100% {
-    -moz-transform: translate3d(0px, -40px, 0px) rotate(0.02deg);
+    -webkit-filter: drop-shadow(0px 40px 8px rgba(0, 0, 0, 0.15));
     filter: drop-shadow(0px 40px 8px rgba(0, 0, 0, 0.15));
+    -moz-transform: translate3d(0px, -40px, 0px);
     transform: translate3d(0px, -40px, 0px);
+  }
+}
+
+@-moz-document url-prefix() {
+  @-webkit-keyframes levitate {
+    // empty for performance issues
+  }
+
+  @keyframes levitate {
+    // empty for performance issues
   }
 }

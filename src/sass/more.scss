@@ -15,7 +15,8 @@
 
   ul {
     grid-template-columns: repeat(3, 1fr);
-    column-gap: 50px;
+    -moz-column-gap: 50px;
+         column-gap: 50px;
     row-gap: 50px;
     display: grid;
 
@@ -87,7 +88,10 @@
 
           justify-content: center;
           pointer-events: none;
-          user-select: none;
+          -webkit-user-select: none;
+             -moz-user-select: none;
+              -ms-user-select: none;
+                  user-select: none;
           display: flex;
 
           font-family: Saira-Medium;
@@ -129,7 +133,8 @@
 @media (min-width: 641px) {
   .more__container {
     ul {
-      column-gap: 0px;
+      -moz-column-gap: 0px;
+           column-gap: 0px;
       row-gap: 0px;
 
       display: flex;

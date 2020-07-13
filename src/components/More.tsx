@@ -20,7 +20,7 @@ const More = () => {
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="https://drive.google.com/file/d/1-rEkMi2q9IQwH7YPKPTFBQDsYUZkQGkS/view?usp=sharing"
+            href="https://drive.google.com/file/d/1n2E4xQtT3k23zTpJuk3G68DPjiT8PhrT/view?usp=sharing"
           >
             <i className="fas fa-file-pdf"></i>
           </a>
