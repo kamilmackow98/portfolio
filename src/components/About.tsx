@@ -61,7 +61,7 @@ const About = () => {
           <div className="about__description">
             <p className="about__desc">I'm a junior web developer, I try to specialize</p>
             <p className="about__desc">mainly in Front End development and JS.</p>
-            <p className="about__desc">I'm also learning about web design.</p>
+            <p className="about__desc">I'm also passionate about web design.</p>
           </div>
         </div>
 

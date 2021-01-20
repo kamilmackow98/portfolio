@@ -13,7 +13,7 @@ const Timeline = () => {
       startDelay: 200,
     };
 
-    new Typed(".timeline-txt", options);
+    // new Typed(".timeline-txt", options);
   }, []);
 
   return (
@@ -24,14 +24,14 @@ const Timeline = () => {
       <div className="timeline__item">
         <div className="timeline__content">
           <div className="timeline__year">1998</div>
-          <div className="timeline__title">I'm born</div>
+          <div className="timeline__title">I'm Born</div>
           <p>Pretty much when it all started</p>
         </div>
       </div>
 
       <div className="timeline__item">
         <div className="timeline__content">
-          <div className="timeline__year">2014</div>
+          <div className="timeline__year">2014 - 2017</div>
           <div className="timeline__title">High School at Fameck</div>
           <p>Baccalauréat Scientifique (High School diploma, scientific option)</p>
         </div>
@@ -39,8 +39,8 @@ const Timeline = () => {
 
       <div className="timeline__item">
         <div className="timeline__content">
-          <div className="timeline__year">2017</div>
-          <div className="timeline__title">DUT (BTEC Higher National Diploma)</div>
+          <div className="timeline__year">2017 - 2019</div>
+          <div className="timeline__title">DUT (BTEC Higher National Diploma / Associate’s Degree)</div>
           <p>University Institute of Technology at Metz</p>
         </div>
       </div>
@@ -49,20 +49,15 @@ const Timeline = () => {
         <div className="timeline__content">
           <div className="timeline__year">04 / 2019 - 06 / 2019</div>
           <div className="timeline__title">Internship at 3d2lux</div>
-          <p>Web development WordPress, JavaScript & PHP</p>
+          <p>Web development - JavaScript, PHP and WordPress</p>
         </div>
       </div>
 
       <div className="timeline__item">
         <div className="timeline__content">
-          <div className="timeline__year">Now</div>
-          <div className="timeline__title">
-            <span className="companyTxt">Your company?</span>
-            <span className="companyTxt"> An interesting project?</span>
-          </div>
-          <div className="timeline__type">
-            <span className="timeline-txt"></span>
-          </div>
+          <div className="timeline__year">2020 - Now</div>
+          <div className="timeline__title">Vocational Degree in Web Development</div>
+          <p>University Institute of Technology at Metz</p>
         </div>
       </div>
     </div>
